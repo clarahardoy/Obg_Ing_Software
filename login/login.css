@@ -1,0 +1,117 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f6fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.login-container {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  min-width: 320px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.form-input {
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+/* INPUTS MAIL Y CONTRASEÑA */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+/* INPUTS MAIL Y CONTRASEÑA CON FOCO */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #0077ff;
+  outline: none;
+  background: #fff;
+}
+/* BOTON LOGIN */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 1;
+}
+/* BOTON LOGIN DESACTIVADO HASYA QUE INGRESE MAIL Y CONTRASEÑA */
+button[type="submit"][disabled] {
+  background: #b0c4de;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+/* MENSAJE DE ERROR DE MAIL */
+.mensaje-error {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  min-height: 1.2em;
+  transition: opacity 0.2s;
+}
+/* MENSAJE DE ERROR DE MAIL VISIBLE */
+.mensaje-error.visible {
+  display: block;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .login-container {
+    min-width: unset;
+    max-width: 95vw;
+    padding: 1.5rem 0.5rem;
+    border-radius: 0.7rem;
+  }
+  .login-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .form-input {
+    margin-bottom: 1rem;
+  }
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.98rem;
+    padding: 0.65rem 0.8rem;
+  }
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+    width: 100%;
+  }
+}
