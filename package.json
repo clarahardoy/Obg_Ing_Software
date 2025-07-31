@@ -1,0 +1,27 @@
+{
+  "name": "obg_ing_software",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarahardoy/Obg_Ing_Software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/clarahardoy/Obg_Ing_Software/issues"
+  },
+  "homepage": "https://github.com/clarahardoy/Obg_Ing_Software#readme",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}
