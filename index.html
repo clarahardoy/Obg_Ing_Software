@@ -9,7 +9,7 @@
     <meta name="keywords" content="barbería, cortes de pelo, barbas, colorimetría, reserva de turnos, barberos" />
     <meta name="author" content="SuperBarbería Team" />
 
-    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/ios-filled/32/fashion-trend.png">
     <title>SuperBarbería</title>
 
@@ -20,12 +20,12 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-    <!-- Hoja de estilos principal -->
-    <link rel="stylesheet" href="estilos/estilos.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/estilos.css" />
 </head>
 
 <body>
-    <!-- ========= NAVBAR ========= -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-inner">
             <a class="logo" href="#">
@@ -36,13 +36,14 @@
             </a>
 
             <nav id="navLinks" class="nav-links">
-                <a href="#reserva">Reservar turno</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#barberos">Barberos</a>
-                <a href="#galeria">Galería</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#login" class="btn-outline">Login</a>
+                <a href="reserva.html">Reservar turno</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="equipo.html">Barberos</a> <!-- crea este archivo o quítalo -->
+                <a href="galeria.html">Galería</a> <!-- idem -->
+                <a href="contacto.html">Contacto</a> <!-- idem -->
+                <a href="login.html" class="btn-outline">Login</a>
             </nav>
+
 
             <!-- Hamburguesa -->
             <button id="btnMenu" class="hamburger" aria-label="Menú">
@@ -51,7 +52,7 @@
         </div>
     </header>
 
-    <!-- ========= HERO / LANDING ========= -->
+    <!-- LANDING -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <p class="mini-title">SUPERBARBERÍA</p>
@@ -65,12 +66,7 @@
         </div>
     </section>
 
-    <!-- Secciones futuras -->
-    <main>
-        <!-- #reserva, #servicios, etc. -->
-    </main>
-
-    <script src="js/script.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
