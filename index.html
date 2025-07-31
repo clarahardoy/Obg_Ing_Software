@@ -9,7 +9,7 @@
     <meta name="keywords" content="barbería, cortes de pelo, barbas, colorimetría, reserva de turnos, barberos" />
     <meta name="author" content="SuperBarbería Team" />
 
-
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/ios-filled/32/fashion-trend.png">
     <title>SuperBarbería</title>
 
@@ -20,12 +20,13 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-    <!-- Hoja de estilos principal -->
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="stylesheet" href="CSS/servicios.css" />
 </head>
 
 <body>
-    <!-- ========= NAVBAR ========= -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-inner">
             <a class="logo" href="#">
@@ -36,13 +37,14 @@
             </a>
 
             <nav id="navLinks" class="nav-links">
-                <a href="#reserva">Reservar turno</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#barberos">Barberos</a>
-                <a href="#galeria">Galería</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#login" class="btn-outline">Login</a>
+                <a href="reserva.html">Reservar turno</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="equipo.html">Barberos</a> <!-- crea este archivo o quítalo -->
+                <a href="galeria.html">Galería</a> <!-- idem -->
+                <a href="contacto.html">Contacto</a> <!-- idem -->
+                <a href="login.html" class="btn-outline">Login</a>
             </nav>
+
 
             <!-- Hamburguesa -->
             <button id="btnMenu" class="hamburger" aria-label="Menú">
@@ -65,40 +67,58 @@
         </div>
     </section>
 
-    <!-- Secciones futuras -->
-    <main>
-        <!-- #reserva, #servicios, etc. -->
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer__logo">
-            <img src="assets/icons/user.svg" alt="Avatar Superbarbería" class="footer__icon" />
-            <span class="footer__nombre">Superbarbería</span>
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0yNCAxMkMxNy4zNyAxMiAxMiAxNy4zNyAxMiAyNEMxMiAzMC42MyAxNy4zNyAzNiAyNCAzNkMzMC42MyAzNiAzNiAzMC42MyAzNiAyNEMzNiAxNy4zNyAzMC42MyAxMiAyNCAxMloiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTE4IDIwQzE4IDE4LjkgMTguOSAxOCAyMCAxOEgyOEMyOS4xIDE4IDMwIDE4LjkgMzAgMjBDMzAgMjEuMSAyOS4xIDIyIDI4IDIySDIwQzE4LjkgMjIgMTggMjEuMSAxOCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Corte de pelo">
+                    </div>
+                    <h3>Corte de Pelo</h3>
+                    <p>Cortes clásicos y modernos con técnicas profesionales. Incluye lavado, corte y peinado.</p>
+                    <span class="precio">$25.000</span>
+                </div>
+    
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTIyIDIyQzIyIDIxLjQ0IDIyLjQ0IDIxIDIzIDIxSDI1QzI1LjU2IDIxIDI2IDIxLjQ0IDI2IDIyQzI2IDIyLjU2IDI1LjU2IDIzIDI1IDIzSDIzQzIyLjQ0IDIzIDIyIDIyLjU2IDIyIDIyWiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4=" alt="Barba">
+                    </div>
+                    <h3>Rasurada de Barba</h3>
+                    <p>Arreglo y modelado de barba con aceites y productos premium. Incluye hidratación.</p>
+                    <span class="precio">$15.000</span>
+                </div>
+    
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xMiAyNEMxMiAxOS41OCAxNS41OCAxNiAyMCAxNkMyNC40MiAxNiAyOCAxOS41OCAyOCAyNEMyOCAyOC40MiAyNC40MiAzMiAyMCAzMkMxNS41OCAzMiAxMiAyOC40MiAxMiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI4IDI0QzI4IDE5LjU4IDMxLjU4IDE2IDM2IDE2QzQwLjQyIDE2IDQ0IDE5LjU4IDQ0IDI0QzQ0IDI4LjQyIDQwLjQyIDMyIDM2IDMyQzMxLjU4IDMyIDI4IDI4LjQyIDI4IDI0WiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4=" alt="Colorimetría">
+                    </div>
+                    <h3>Colorimetría</h3>
+                    <p>Tintes profesionales y mechas con productos de alta calidad. Consulta previa incluida.</p>
+                    <span class="precio">$35.000</span>
+                </div>
+    
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Combo">
+                    </div>
+                    <h3> Lavado y acondicionamiento de cabello</h3>
+                    <p>Lavado y acondicionamiento de cabello con productos premium. Incluye hidratación.</p>
+                    <span class="precio">$35.000</span>
+                </div>
+    
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Combo">
+                    </div>
+                    <h3>Premium</h3>
+                    <p>Nutrición con minerales que nutren el cabello. Incluye hidratación.</p>
+                    <span class="precio">$35.000</span>
+            </div>
         </div>
-
-        <!-- Contacto -->
-        <nav class="footer__links" aria-label="Redes y contacto">
-
-            <!-- Email -->
-            <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
-                <img src="assets/icons/mail.svg" alt="" class="footer__icon" />
-            </a>
-
-            <!-- WhatsApp -->
-            <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
-                rel="noopener">
-                <img src="assets/icons/whatsapp.svg" alt="" class="footer__icon" />
-            </a>
-
-            <!-- Instagram -->
-            <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
-                target="_blank" rel="noopener">
-                <img src="assets/icons/instagram.svg" alt="" class="footer__icon" />
-            </a>
-        </nav>
-    </footer>
+    </section>
+    
 
     <script src="JS/script.js"></script>
 </body>

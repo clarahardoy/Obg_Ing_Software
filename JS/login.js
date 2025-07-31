@@ -6,6 +6,9 @@ const emailError = document.getElementById('error-mail');
 
 const emailValidacion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const emailAdmin = 'admin@admin.com';
+const contrasenaAdmin = 'admin123';
+
 const habilitarBotonLogin = () => {
   const emailCompletado = emailInput.value.trim() !== '';
   const contrasenaCompletada = contrasenaInput.value.trim() !== '';
@@ -27,6 +30,15 @@ const actualizarMensajeDeErrorDeMail = () => {
   }
 };
 
+const validarCredenciales = () => {
+  const email = emailInput.value.trim();
+  const contrasena = contrasenaInput.value.trim();
+
+  if (email === emailAdmin && contrasena === contrasenaAdmin) {
+    window.location.href = 'index.html';
+  }
+};
+
 emailInput.addEventListener('input', () => {
   habilitarBotonLogin();
   actualizarMensajeDeErrorDeMail();
@@ -35,5 +47,5 @@ contrasenaInput.addEventListener('input', habilitarBotonLogin);
 
 formLogin.addEventListener('submit', function(event) {
   event.preventDefault();
-  alert('Implementar navegacion a pagina principal');
+  validarCredenciales();
 });

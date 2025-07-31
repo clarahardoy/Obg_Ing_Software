@@ -1,117 +1,152 @@
-body {
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f6fa;
-  font-family: 'Segoe UI', Arial, sans-serif;
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--negro) 0%, var(--marronOscuro) 100%);
+    padding: 120px 20px 40px;
 }
 
 .login-container {
-  background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  min-width: 320px;
-  width: 100%;
-  max-width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    min-width: 320px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .login-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #222;
-  letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--blanco);
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
 }
 
+.form-group,
 .form-input {
-  margin-bottom: 1.5rem;
-  margin-right: 1.5rem;
-  padding: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blanco);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
 }
 /* INPUTS MAIL Y CONTRASEÑA */
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  background: #f9fafb;
-  transition: border 0.2s;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--blanco);
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
 }
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 /* INPUTS MAIL Y CONTRASEÑA CON FOCO */
 input[type="email"]:focus,
 input[type="password"]:focus {
-  border-color: #0077ff;
-  outline: none;
-  background: #fff;
+    border-color: var(--marronClaro);
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(115, 65, 36, 0.2);
 }
 /* BOTON LOGIN */
 button[type="submit"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: #0077ff;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
-  opacity: 1;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--marronClaro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-/* BOTON LOGIN DESACTIVADO HASYA QUE INGRESE MAIL Y CONTRASEÑA */
+
+button[type="submit"]:hover:not([disabled]) {
+    background: var(--marron);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* BOTON LOGIN DESACTIVADO HASTA QUE INGRESE MAIL Y CONTRASEÑA */
 button[type="submit"][disabled] {
-  background: #b0c4de;
-  cursor: not-allowed;
-  opacity: 0.7;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 /* MENSAJE DE ERROR DE MAIL */
 .mensaje-error {
-  color: #e53935;
-  font-size: 0.95rem;
-  margin-top: 0.3rem;
-  min-height: 1.2em;
-  transition: opacity 0.2s;
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    min-height: 1.2em;
+    transition: opacity 0.2s;
+    font-family: 'Roboto', sans-serif;
 }
+
 /* MENSAJE DE ERROR DE MAIL VISIBLE */
 .mensaje-error.visible {
-  display: block;
+    display: block;
 }
 
 /* RESPONSIVO */
-@media (max-width: 600px) {
-  .login-container {
-    min-width: unset;
-    max-width: 95vw;
-    padding: 1.5rem 0.5rem;
-    border-radius: 0.7rem;
-  }
-  .login-title {
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-  }
-  .form-input {
-    margin-bottom: 1rem;
-  }
-  input[type="email"],
-  input[type="password"] {
-    font-size: 0.98rem;
-    padding: 0.65rem 0.8rem;
-  }
-  button[type="submit"] {
-    font-size: 1rem;
-    padding: 0.7rem 0.8rem;
-    width: 100%;
-  }
+@media (max-width: 768px) {
+    .login-section {
+        padding: 100px 15px 30px;
+    }
+    
+    .login-container {
+        min-width: unset;
+        max-width: 95vw;
+        padding: 2rem 1.5rem;
+        border-radius: 0.7rem;
+    }
+    
+    .login-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group,
+    .form-input {
+        margin-bottom: 1.2rem;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+    }
+    
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.7rem 0.9rem;
+    }
 }
