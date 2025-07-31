@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Superbarberia</title>
-  <link rel="stylesheet" href="CSS/login.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="SuperBarbería - Inicia sesión en tu cuenta para acceder a reservas y servicios premium." />
+    <meta name="keywords" content="login, barbería, cuenta, sesión, superbarbería" />
+    <meta name="author" content="SuperBarbería Team" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/ios-filled/32/fashion-trend.png">
+    <title>Login - SuperBarbería</title>
+
+    <!-- Links: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="stylesheet" href="CSS/login.css" />
 </head>
+
 <body>
-  <div class="login-container">
-    
-    <form id="login-form" autocomplete="off">
-      
-        <h1 class="login-title">Superbarberia</h1>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="username" placeholder="Ingresa tu email">
-        <div id="error-mail" class="mensaje-error" style="display:none;">Email inválido</div>
-      </div>
-      
-      <div class="form-input">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Ingresa tu contraseña">
-      </div>
-       
-      <button type="submit" id="login-btn" disabled>Iniciar sesión</button>
-    </form>
-  </div>
-  <script src="JS/login.js"></script>
+    <!-- LOGIN  -->
+    <section class="login-section">
+        <div class="login-container">
+            <form id="login-form" autocomplete="off">
+                <h1 class="login-title">SuperBarbería</h1>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="username" placeholder="Ingresa tu email">
+                    <div id="error-mail" class="mensaje-error" style="display:none;">Email inválido</div>
+                </div>
+                
+                <div class="form-input">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Ingresa tu contraseña">
+                </div>
+                
+                <button type="submit" id="login-btn" disabled>Iniciar sesión</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/login.js"></script>
 </body>
+
 </html>
