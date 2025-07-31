@@ -223,6 +223,60 @@ h2 {
     box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
 }
 
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    background: var(--negro);
+    padding: 0.75rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Oswald', sans-serif;
+}
+
+/* ---------- Logo ---------- */
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer__nombre {
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+}
+
+/* ---------- Lista de iconos de contacto ---------- */
+.footer__links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer__link {
+    display: inline-flex;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+/* ---------- Íconos ---------- */
+.footer__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.footer__link:hover .footer__icon,
+.footer__link:focus .footer__icon {
+    transform: translateY(-2px);
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media(max-width:991px) {
@@ -262,6 +316,15 @@ h2 {
 
     .nav-links a {
         font-size: 1.05rem;
+    }
+
+    .footer {
+        padding: 1rem 2rem;
+    }
+
+    .footer__icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 

@@ -9,7 +9,7 @@
     <meta name="keywords" content="barbería, cortes de pelo, barbas, colorimetría, reserva de turnos, barberos" />
     <meta name="author" content="SuperBarbería Team" />
 
-    
+
     <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/ios-filled/32/fashion-trend.png">
     <title>SuperBarbería</title>
 
@@ -21,7 +21,7 @@
         rel="stylesheet">
 
     <!-- Hoja de estilos principal -->
-    <link rel="stylesheet" href="estilos/estilos.css" />
+    <link rel="stylesheet" href="CSS/estilos.css" />
 </head>
 
 <body>
@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <!-- ========= HERO / LANDING ========= -->
+    <!-- LANDING -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <p class="mini-title">SUPERBARBERÍA</p>
@@ -70,15 +70,36 @@
         <!-- #reserva, #servicios, etc. -->
     </main>
 
-    <script src="js/script.js"></script>
-    <!-- Secciones futuras -->
-    <main>
-        <!-- #reserva, #servicios, etc. -->
-    </main>
+
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-inner">
+        <div class="footer__logo">
+            <img src="assets/icons/user.svg" alt="Avatar Superbarbería" class="footer__icon" />
+            <span class="footer__nombre">Superbarbería</span>
         </div>
+
+        <!-- Contacto -->
+        <nav class="footer__links" aria-label="Redes y contacto">
+
+            <!-- Email -->
+            <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
+                <img src="assets/icons/mail.svg" alt="" class="footer__icon" />
+            </a>
+
+            <!-- WhatsApp -->
+            <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+                rel="noopener">
+                <img src="assets/icons/whatsapp.svg" alt="" class="footer__icon" />
+            </a>
+
+            <!-- Instagram -->
+            <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
+                target="_blank" rel="noopener">
+                <img src="assets/icons/instagram.svg" alt="" class="footer__icon" />
+            </a>
+        </nav>
+    </footer>
+
     <script src="JS/script.js"></script>
 </body>
 
