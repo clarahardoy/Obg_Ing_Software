@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: var(--verdeFondo);
+    background: var(--verdeFondo);
     color: var(--grisOscuro);
     min-height: 100%;
 }
@@ -50,34 +50,32 @@ h2 {
     text-align: center;
 }
 
-/* LANDING */
+/*------------------------------------------------------------------*/
 
 /* NAVBAR */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0 0 auto 0;
     width: 100%;
-    background: rgba(8, 11, 13, 0.72);
+    background: rgba(8, 11, 13, .72);
     backdrop-filter: blur(6px);
     z-index: 100;
 }
 
 .nav-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     height: 72px;
 }
 
-/* LOGO */
 .logo {
     display: flex;
     align-items: center;
     gap: .4rem;
+    font-weight: 700;
     color: var(--blanco);
     text-decoration: none;
-    font-weight: 700;
 }
 
 .logo-icon {
@@ -85,14 +83,19 @@ h2 {
     line-height: 1;
 }
 
+.logo-icon img {
+    width: 28px;
+    height: 28px;
+}
+
 .logo-text {
     letter-spacing: .5px;
 }
 
-/* ENLACES */
 .nav-links {
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -123,7 +126,6 @@ h2 {
     width: 100%;
 }
 
-/* Botón outline (login) */
 .btn-outline {
     border: 1.5px solid var(--blanco);
     padding: .28rem .9rem;
@@ -131,34 +133,48 @@ h2 {
     font-weight: 600;
 }
 
-.btn-outline:hover {
-    background: var(--blanco);
-    color: var(--negro);
+.btn-outline::after {
+    display: none;
 }
 
-/* HAMBURGUESA */
+.btn-outline:hover,
+.btn-outline:focus {
+    background: var(--marronOscuro);
+    color: var(--blanco);
+    border: var(--marronOscuro) 1.5px solid;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
-    background: none;
-    border: none;
+    padding: .45rem;
+    background: transparent;
+    border: 1px solid var(--blanco);
+    border-radius: 4px;
     cursor: pointer;
-    z-index: 101;
+    z-index: 102;
 }
 
 .hamburger span {
-    width: 25px;
-    height: 2px;
+    width: 28px;
+    height: 3px;
     background: var(--blanco);
-    transition: transform .3s, opacity .3s;
+    transition: transform .3s, opacity .3s, background .2s;
 }
 
-/* ---------- HERO ---------- */
-.hero {
+.hamburger:hover span,
+.hamburger:focus span {
+    background: var(--marronClaro);
+}
+
+/*------------------------------------------------------------------*/
+
+/* LANDING */
+.landing {
     height: 80vh;
     min-height: 500px;
-    background: url("../img/hero.jpg") center/cover no-repeat;
+    background: url("../img/landing.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -166,14 +182,14 @@ h2 {
     text-align: center;
 }
 
-.hero::before {
+.landing::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(0, 0, 0, .6) 0%, rgba(64, 30, 18, .78) 100%);
 }
 
-.hero-content {
+.landing-content {
     position: relative;
     z-index: 1;
     padding: 0 1rem;
@@ -188,25 +204,24 @@ h2 {
     opacity: .85;
 }
 
-.hero h1 {
+.landing h1 {
     font-size: 2.65rem;
     font-weight: 700;
 }
 
-.hero h2 {
+.landing h2 {
     font-size: 1.35rem;
     font-weight: 600;
     margin: .6rem 0 1.3rem;
 }
 
-.hero-desc {
+.landing-desc {
     font-size: .95rem;
     max-width: 520px;
     margin: 0 auto 2rem;
     opacity: .9;
 }
 
-/* CTA */
 .btn-primary {
     display: inline-block;
     background: var(--marronClaro);
@@ -223,53 +238,111 @@ h2 {
     box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
 }
 
+/*------------------------------------------------------------------*/
+
+/* EQUIPO (Barberos) */
+.equipo {
+    padding: 4rem 0;
+}
+
+.equipo h2 {
+    /* misma distancia título → grilla que “Servicios” */
+    margin-bottom: 3rem;
+}
+
+.equipo-grid {
+    display: grid;
+    gap: 3rem;
+    /* coincide con la separación de tarjetas en Servicios */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.barbero-card {
+    background: var(--blanco);
+    border-radius: 0.65rem;
+    overflow: hidden;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .10);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+/* Hover: resalta más, borde marrón oscuro y halo blanco */
+.barbero-card:hover,
+.barbero-card:focus-within {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--marronOscuro);
+    box-shadow: 0 0 18px rgba(255, 255, 255, .35);
+}
+
+/* Imagen */
+.barbero-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.barbero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto */
+.barbero-card h3 {
+    font-size: 1.15rem;
+    margin: .9rem 1rem .4rem;
+    color: var(--marronOscuro);
+}
+
+.barbero-card p {
+    font-size: .9rem;
+    margin: 0 1rem 1.3rem;
+    color: #444;
+}
+
+/*------------------------------------------------------------------*/
 
 /* FOOTER */
-
 .footer {
     width: 100%;
     background: var(--negro);
     padding: 0.75rem 1rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     font-family: 'Oswald', sans-serif;
 }
 
-/* ---------- Logo ---------- */
-.footer__logo {
+.footer__brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: .5rem;
 }
 
-.footer__nombre {
+.footer__name {
     color: var(--blanco);
     font-weight: 600;
-    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+    font-size: clamp(.875rem, .8rem + .3vw, 1rem);
 }
 
-/* ---------- Lista de iconos de contacto ---------- */
 .footer__links {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: .75rem;
 }
 
 .footer__link {
     display: inline-flex;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
+    padding: .25rem;
+    border-radius: .25rem;
 }
 
-/* ---------- Íconos ---------- */
 .footer__icon {
     width: 1.25rem;
     height: 1.25rem;
     display: block;
-    transition: transform 0.2s ease;
+    filter: invert(0);
+    transition: transform .2s ease;
 }
 
 .footer__link:hover .footer__icon,
@@ -277,20 +350,25 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* --------------------------------------------------------------------- */
 
-@media(max-width:991px) {
-    .hero h1 {
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .landing h1 {
         font-size: 2.2rem;
     }
 
-    .hero h2 {
+    .landing h2 {
         font-size: 1.15rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Menú móvil */
-@media(max-width:768px) {
+@media (max-width: 768px) {
+
     .hamburger {
         display: flex;
     }
@@ -318,19 +396,31 @@ h2 {
         font-size: 1.05rem;
     }
 
-    .footer {
-        padding: 1rem 2rem;
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .barbero-img {
+        aspect-ratio: 5 / 3;
+    }
+
+    .footer__name {
+        display: none;
     }
 
     .footer__icon {
         width: 1.5rem;
         height: 1.5rem;
     }
+
+    .footer {
+        padding: 1rem 2rem;
+    }
 }
 
-/* Animación de la “X” */
+/* Animación “X” hamburguesa */
 .hamburger.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -338,5 +428,5 @@ h2 {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }

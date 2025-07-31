@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reservá tu turno en SuperBarbería – cortes premium, barbas y más." />
+    <meta name="keywords" content="barbería, reserva de turnos, cortes de pelo, barbas, colorimetría" />
+    <meta name="author" content="SuperBarbería Team" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo_negro.png" />
+    <title>Reservar turno | SuperBarbería</title>
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <link rel="stylesheet" href="CSS/reserva.css" />
+</head>
+
+<body>
+    <!-- MENÚ  -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html#inicio">
+                <span class="logo-icon">
+                    <img src="img/logo_nav.png" alt="Logotipo SuperBarbería" />
+                </span>
+                <span class="logo-text">SuperBarbería</span>
+            </a>
+
+            <nav id="navLinks" class="nav-links">
+                <a href="#reserva" class="active">Reservar turno</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#equipo">Barberos</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="login.html" class="btn-outline">Login</a>
+            </nav>
+
+            <!-- Hamburguesa - MOBILE -->
+            <button id="btnMenu" class="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: RESERVA -->
+    <main id="reserva" class="reserva-section">
+        <div class="container reserva-wrapper">
+            <!-- Columna: info / título -->
+            <div class="reserva-info">
+                <h1>Reserva tu turno</h1>
+                <p>
+                    Selecciona al barbero de tu preferencia y el servicio que deseas realizarte.<br />
+                    Cada servicio dura <strong>30&nbsp;min.</strong><br />
+                    Todos los campos son obligatorios.
+                </p>
+            </div>
+
+            <!-- Columna: formulario -->
+            <form id="formReserva" class="reserva-form" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej.: Super" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ej.: Barbería" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Ej.: superbarberia@gmail.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de celular</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej.: 091012012" pattern="[0-9]{8,9}"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label for="barbero">Barbero</label>
+                    <select id="barbero" name="barbero" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option>Martín&nbsp;Ramírez</option>
+                        <option>Diego&nbsp;Morales</option>
+                        <option>Sebastián&nbsp;Castro</option>
+                        <option>Alejandro&nbsp;Torres</option>
+                        <option>Javier&nbsp;Herrera</option>
+                        <option>Nicolás&nbsp;Gómez</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option>Corte de pelo</option>
+                        <option>Rasurada de barba</option>
+                        <option>Colorimetría</option>
+                        <option>Lavado y acondicionamiento</option>
+                        <option>Premium (nutrición)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Seleccione una fecha</label>
+                    <input type="date" id="fecha" name="fecha" min="{{MIN_DATE}}" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">Seleccione un turno</label>
+                    <select id="hora" name="hora" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option>09:00</option>
+                        <option>09:30</option>
+                        <option>10:00</option>
+                        <option>10:30</option>
+                        <option>11:00</option>
+                        <option>20:30</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">Reservar</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__brand">
+            <img src="assets/icons/user.svg" alt="Avatar Superbarbería" class="footer__icon" />
+            <span class="footer__name">Superbarbería</span>
+        </div>
+
+        <nav class="footer__links" aria-label="Redes y contacto">
+            <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
+                <img src="assets/icons/mail.svg" alt="" class="footer__icon" />
+            </a>
+            <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+                rel="noopener">
+                <img src="assets/icons/whatsapp.svg" alt="" class="footer__icon" />
+            </a>
+            <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
+                target="_blank" rel="noopener">
+                <img src="assets/icons/instagram.svg" alt="" class="footer__icon" />
+            </a>
+        </nav>
+    </footer>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/reserva.js"></script>
+</body>
+
+</html>

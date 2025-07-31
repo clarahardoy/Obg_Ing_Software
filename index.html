@@ -10,10 +10,10 @@
     <meta name="author" content="SuperBarbería Team" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/ios-filled/32/fashion-trend.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo_negro.png">
     <title>SuperBarbería</title>
 
-    <!-- Links: Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,27 +26,26 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
+    <!-- MENÚ -->
     <header class="navbar">
         <div class="container nav-inner">
             <a class="logo" href="#">
-                <span class="logo-icon"><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACpUlEQVR4nO2ZS2sUQRSFP43OCCq6MfgGXyv9BZLs3JhsVER0I/hAIdH4LzQ+di50oysfZONOd258jBMlmmUgihsTRWIWM4kYEFsKbmBop7qrq7q6WugDlxlq5tx7T1NdfaoLKlQoDK+BKGAsAFPAI+AEULMVshhYSBSLj8BRGyGfS9B81CWuAyuzCHlSgqYjTYxmEXKhBA1HCXHEVMha4EcJGo40MQ2sNhVz3qLAc2C+IDHHTYWsAO5nSDwLbAR2Ak8LEPKADOgBbhsmPhfjngK+eBQyhQUOpyT9DqzpwlPz+CTQ8CCkhSWSkt4x4Kspdxq4J8I+AW1HMVZISqhshC9ERQrZl2/v4YRssE3qWNcKS5pkv2Sp9oWlhLpWeKdJOJ5v3/7rDmoSDtgmDFl3UK5EWz59iwhdt0JQKGtyBXgrW+R5eXKrPU3dgK/+c1E4irsouUYM+blgKzCZsM6Py3902CZN6/iTKfxcUE8RsRxNYDcwJkavJd93idA0/geXtygmGMlg7n4bjuli2KeQNxkaiWSztV3iWUZuo0wv7ZSAZexwzPXSRcirnDdBLnuRFwSaWt2mRjPU1IrjUoZGhv5hw2VHfm6oydKY1sSEZvmsO/JzxZaUZiYMHohJ/PfAZgpCXaZZU44D2jKnhwyvZE34DeEuyP03XKRFqfC/osdwrJRYD9zqeG2qbuo+oL/DbKrfbgLrKCl6Nc74p0R8XIncRAkxZmE7HodqtiZnerMxE3fA0j/9AfbHTOqMHLV5fSCOakzcXQczqLjdTOo1n0JmpMjBjrG9mnvANNR+fU9Hvj4ZV7W84ZsUGRCrckzO9iLHmJYzdZXzkIx99SnkhuVx2UPfR9JZsUrm7pzBpkr5qDPyslvFWRlrpXDngKtSq0IFAuEvu+5+Km1f6R0AAAAASUVORK5CYII="
-                        alt="fashion-trend"></span>
+                <span class="logo-icon">
+                    <img src="img/logo_nav.png" alt="fashion-trend">
+                </span>
                 <span class="logo-text">SuperBarbería</span>
             </a>
 
             <nav id="navLinks" class="nav-links">
                 <a href="reserva.html">Reservar turno</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="equipo.html">Barberos</a> <!-- crea este archivo o quítalo -->
-                <a href="galeria.html">Galería</a> <!-- idem -->
-                <a href="contacto.html">Contacto</a> <!-- idem -->
+                <a href="#servicios">Servicios</a>
+                <a href="#equipo">Barberos</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
                 <a href="login.html" class="btn-outline">Login</a>
             </nav>
 
-
-            <!-- Hamburguesa -->
+            <!-- Hamburguesa - MOBILE -->
             <button id="btnMenu" class="hamburger" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
@@ -54,12 +53,12 @@
     </header>
 
     <!-- LANDING -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
+    <section class="landing" id="inicio">
+        <div class="landing-content">
             <p class="mini-title">SUPERBARBERÍA</p>
             <h1>15 Años de cortes premium</h1>
             <h2>¡Reservá tu turno en solo 3 clics!</h2>
-            <p class="hero-desc">
+            <p class="landing-desc">
                 Somos tu barbería de confianza: cortes, barbas y colorimetría.<br>
                 Elegí tu barbero favorito, horario y listo.
             </p>
@@ -74,52 +73,145 @@
             <div class="servicios-grid">
                 <div class="servicio-card">
                     <div class="servicio-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0yNCAxMkMxNy4zNyAxMiAxMiAxNy4zNyAxMiAyNEMxMiAzMC42MyAxNy4zNyAzNiAyNCAzNkMzMC42MyAzNiAzNiAzMC42MyAzNiAyNEMzNiAxNy4zNyAzMC42MyAxMiAyNCAxMloiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTE4IDIwQzE4IDE4LjkgMTguOSAxOCAyMCAxOEgyOEMyOS4xIDE4IDMwIDE4LjkgMzAgMjBDMzAgMjEuMSAyOS4xIDIyIDI4IDIySDIwQzE4LjkgMjIgMTggMjEuMSAxOCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Corte de pelo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0yNCAxMkMxNy4zNyAxMiAxMiAxNy4zNyAxMiAyNEMxMiAzMC42MyAxNy4zNyAzNiAyNCAzNkMzMC42MyAzNiAzNiAzMC42MyAzNiAyNEMzNiAxNy4zNyAzMC42MyAxMiAyNCAxMloiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTE4IDIwQzE4IDE4LjkgMTguOSAxOCAyMCAxOEgyOEMyOS4xIDE4IDMwIDE4LjkgMzAgMjBDMzAgMjEuMSAyOS4xIDIyIDI4IDIySDIwQzE4LjkgMjIgMTggMjEuMSAxOCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+"
+                            alt="Corte de pelo">
                     </div>
                     <h3>Corte de Pelo</h3>
                     <p>Cortes clásicos y modernos con técnicas profesionales. Incluye lavado, corte y peinado.</p>
-                    <span class="precio">$25.000</span>
+                    <span class="precio">$450</span>
                 </div>
-    
+
                 <div class="servicio-card">
                     <div class="servicio-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTIyIDIyQzIyIDIxLjQ0IDIyLjQ0IDIxIDIzIDIxSDI1QzI1LjU2IDIxIDI2IDIxLjQ0IDI2IDIyQzI2IDIyLjU2IDI1LjU2IDIzIDI1IDIzSDIzQzIyLjQ0IDIzIDIyIDIyLjU2IDIyIDIyWiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4=" alt="Barba">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTIyIDIyQzIyIDIxLjQ0IDIyLjQ0IDIxIDIzIDIxSDI1QzI1LjU2IDIxIDI2IDIxLjQ0IDI2IDIyQzI2IDIyLjU2IDI1LjU2IDIzIDI1IDIzSDIzQzIyLjQ0IDIzIDIyIDIyLjU2IDIyIDIyWiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4="
+                            alt="Barba">
                     </div>
                     <h3>Rasurada de Barba</h3>
                     <p>Arreglo y modelado de barba con aceites y productos premium. Incluye hidratación.</p>
-                    <span class="precio">$15.000</span>
+                    <span class="precio">$350</span>
                 </div>
-    
+
                 <div class="servicio-card">
                     <div class="servicio-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xMiAyNEMxMiAxOS41OCAxNS41OCAxNiAyMCAxNkMyNC40MiAxNiAyOCAxOS41OCAyOCAyNEMyOCAyOC40MiAyNC40MiAzMiAyMCAzMkMxNS41OCAzMiAxMiAyOC40MiAxMiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI4IDI0QzI4IDE5LjU4IDMxLjU4IDE2IDM2IDE2QzQwLjQyIDE2IDQ0IDE5LjU4IDQ0IDI0QzQ0IDI4LjQyIDQwLjQyIDMyIDM2IDMyQzMxLjU4IDMyIDI4IDI4LjQyIDI4IDI0WiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4=" alt="Colorimetría">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xMiAyNEMxMiAxOS41OCAxNS41OCAxNiAyMCAxNkMyNC40MiAxNiAyOCAxOS41OCAyOCAyNEMyOCAyOC40MiAyNC40MiAzMiAyMCAzMkMxNS41OCAzMiAxMiAyOC40MiAxMiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI4IDI0QzI4IDE5LjU4IDMxLjU4IDE2IDM2IDE2QzQwLjQyIDE2IDQ0IDE5LjU4IDQ0IDI0QzQ0IDI4LjQyIDQwLjQyIDMyIDM2IDMyQzMxLjU4IDMyIDI4IDI4LjQyIDI4IDI0WiIgZmlsbD0iIzQwMUUxMiIvPgo8L3N2Zz4="
+                            alt="Colorimetría">
                     </div>
                     <h3>Colorimetría</h3>
                     <p>Tintes profesionales y mechas con productos de alta calidad. Consulta previa incluida.</p>
-                    <span class="precio">$35.000</span>
+                    <span class="precio">$500</span>
                 </div>
-    
+
                 <div class="servicio-card">
                     <div class="servicio-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Combo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+"
+                            alt="Combo">
                     </div>
                     <h3> Lavado y acondicionamiento de cabello</h3>
                     <p>Lavado y acondicionamiento de cabello con productos premium. Incluye hidratación.</p>
-                    <span class="precio">$35.000</span>
+                    <span class="precio">$400</span>
                 </div>
-    
+
                 <div class="servicio-card">
                     <div class="servicio-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+" alt="Combo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTIuOTUgNCA0IDEyLjk1IDQgMjRDMCAzNi4wNSAxMi45NSA0OCAyNCA0OEMzNS4wNSA0OCA0OCAzNi4wNSA0OCAyNEM0OCAxMi45NSAzNS4wNSA0IDI0IDRaIiBmaWxsPSIjNTkzMjFCIi8+CjxwYXRoIGQ9Ik0xNiAyNEMxNiAxOS41OCAxOS41OCAxNiAyNCAxNkMyOC40MiAxNiAzMiAxOS41OCAzMiAyNEMzMiAyOC40MiAyOC40MiAzMiAyNCAzMkMxOS41OCAzMiAxNiAyOC40MiAxNiAyNFoiIGZpbGw9IiM3MzQxMjQiLz4KPHBhdGggZD0iTTI0IDIwQzI0IDE4LjkgMjQuOSAxOCAyNiAxOEgyMkMyMC45IDE4IDIwIDE4LjkgMjAgMjBDMjAgMjEuMSAyMC45IDIyIDIyIDIySDI2QzI0LjkgMjIgMjQgMjEuMSAyNCAyMFoiIGZpbGw9IiM0MDFFMTIiLz4KPC9zdmc+"
+                            alt="Combo">
                     </div>
                     <h3>Premium</h3>
                     <p>Nutrición con minerales que nutren el cabello. Incluye hidratación.</p>
-                    <span class="precio">$35.000</span>
+                    <span class="precio">$800</span>
+                </div>
+            </div>
+    </section>
+
+    <!-- BARBEROS -->
+    <section class="equipo" id="equipo">
+        <div class="container">
+            <h2>Nuestros Barberos</h2>
+
+            <div class="equipo-grid">
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero1.jpg" alt="Martín Ramírez">
+                    </div>
+                    <h3>Martín Ramírez</h3>
+                    <p>15 años de experiencia · Maestro en cortes clásicos y afeitados a navaja.</p>
+                </div>
+
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero2.jpg" alt="Diego Morales">
+                    </div>
+                    <h3>Diego Morales</h3>
+                    <p>12 años de experiencia · Especialista en fades y degradados modernos.</p>
+                </div>
+
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero3.jpg" alt="Sebastián Castro">
+                    </div>
+                    <h3>Sebastián Castro</h3>
+                    <p>10 años de experiencia · Colorista experto en mechas y decoloración.</p>
+                </div>
+
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero4.jpg" alt="Alejandro Torres">
+                    </div>
+                    <h3>Alejandro Torres</h3>
+                    <p>8 años de experiencia · Gurú del cuidado y diseño de barbas.</p>
+                </div>
+
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero5.jpg" alt="Javier Herrera">
+                    </div>
+                    <h3>Javier Herrera</h3>
+                    <p>7 años de experiencia · Stylist en texturizados y undercuts creativos.</p>
+                </div>
+
+                <div class="barbero-card">
+                    <div class="barbero-icon">
+                        <img src="assets/images/barbero6.jpg" alt="Nicolás Gómez">
+                    </div>
+                    <h3>Nicolás Gómez</h3>
+                    <p>5 años de experiencia · Artista en diseños y patrones con máquina.</p>
+                </div>
             </div>
         </div>
     </section>
-    
 
+    <!-- GALERÍA -->
+
+    <!-- CONTACTO -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- Logo + nombre -->
+        <div class="footer__brand">
+            <img src="assets/icons/user.svg" alt="Avatar Superbarbería" class="footer__icon" />
+            <span class="footer__name">Superbarbería</span>
+        </div>
+
+        <!-- Contacto -->
+        <nav class="footer__links" aria-label="Redes y contacto">
+            <!-- Correo -->
+            <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
+                <img src="assets/icons/mail.svg" alt="" class="footer__icon" />
+            </a>
+
+            <!-- WhatsApp -->
+            <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+                rel="noopener">
+                <img src="assets/icons/whatsapp.svg" alt="" class="footer__icon" />
+            </a>
+
+            <!-- Instagram -->
+            <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
+                target="_blank" rel="noopener">
+                <img src="assets/icons/instagram.svg" alt="" class="footer__icon" />
+            </a>
+        </nav>
+    </footer>
     <script src="JS/script.js"></script>
 </body>
 
