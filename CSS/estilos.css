@@ -240,68 +240,6 @@ h2 {
 
 /*------------------------------------------------------------------*/
 
-/* EQUIPO (Barberos) */
-.equipo {
-    padding: 4rem 0;
-}
-
-.equipo h2 {
-    /* misma distancia título → grilla que “Servicios” */
-    margin-bottom: 3rem;
-}
-
-.equipo-grid {
-    display: grid;
-    gap: 3rem;
-    /* coincide con la separación de tarjetas en Servicios */
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.barbero-card {
-    background: var(--blanco);
-    border-radius: 0.65rem;
-    overflow: hidden;
-    border: 2px solid transparent;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .10);
-    transition: transform .25s, box-shadow .25s, border-color .25s;
-}
-
-/* Hover: resalta más, borde marrón oscuro y halo blanco */
-.barbero-card:hover,
-.barbero-card:focus-within {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--marronOscuro);
-    box-shadow: 0 0 18px rgba(255, 255, 255, .35);
-}
-
-/* Imagen */
-.barbero-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-}
-
-.barbero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Texto */
-.barbero-card h3 {
-    font-size: 1.15rem;
-    margin: .9rem 1rem .4rem;
-    color: var(--marronOscuro);
-}
-
-.barbero-card p {
-    font-size: .9rem;
-    margin: 0 1rem 1.3rem;
-    color: #444;
-}
-
-/*------------------------------------------------------------------*/
-
 /* FOOTER */
 .footer {
     width: 100%;
@@ -329,6 +267,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: .75rem;
+    justify-content: center;
 }
 
 .footer__link {
@@ -340,7 +279,9 @@ h2 {
 .footer__icon {
     width: 1.25rem;
     height: 1.25rem;
+    object-fit: contain;
     display: block;
+    margin-inline: auto;
     filter: invert(0);
     transition: transform .2s ease;
 }
@@ -360,10 +301,6 @@ h2 {
 
     .landing h2 {
         font-size: 1.15rem;
-    }
-
-    .equipo-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -394,14 +331,6 @@ h2 {
 
     .nav-links a {
         font-size: 1.05rem;
-    }
-
-    .equipo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .barbero-img {
-        aspect-ratio: 5 / 3;
     }
 
     .footer__name {

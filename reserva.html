@@ -29,7 +29,7 @@
         <div class="container nav-inner">
             <a class="logo" href="index.html#inicio">
                 <span class="logo-icon">
-                    <img src="img/logo_nav.png" alt="Logotipo SuperBarbería" />
+                    <img src="img/logo_claro.png" alt="Logotipo SuperBarbería" />
                 </span>
                 <span class="logo-text">SuperBarbería</span>
             </a>
@@ -57,7 +57,7 @@
             <div class="reserva-info">
                 <h1>Reserva tu turno</h1>
                 <p>
-                    Selecciona al barbero de tu preferencia y el servicio que deseas realizarte.<br />
+                    Selecciona tu barbero de confianza y el servicio que deseas realizarte.<br />
                     Cada servicio dura <strong>30&nbsp;min.</strong><br />
                     Todos los campos son obligatorios.
                 </p>
@@ -67,28 +67,29 @@
             <form id="formReserva" class="reserva-form" novalidate>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej.: Super" required />
+                    <input type="text" id="txtNombre" name="nombre" placeholder="Ej.: Super" required />
                 </div>
 
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ej.: Barbería" required />
+                    <input type="text" id="txtApellido" name="apellido" placeholder="Ej.: Barbería" required />
                 </div>
 
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="Ej.: superbarberia@gmail.com" required />
+                    <input type="email" id="txtEmail" name="email" placeholder="Ej.: superbarberia@gmail.com"
+                        required />
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Número de celular</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ej.: 091012012" pattern="[0-9]{8,9}"
+                    <input type="tel" id="txtTelefono" name="telefono" placeholder="Ej.: 091012012" pattern="[0-9]{8,9}"
                         required />
                 </div>
 
                 <div class="form-group">
                     <label for="barbero">Barbero</label>
-                    <select id="barbero" name="barbero" required>
+                    <select id="slcBarbero" name="barbero" required>
                         <option value="" disabled selected>Seleccionar</option>
                         <option>Martín&nbsp;Ramírez</option>
                         <option>Diego&nbsp;Morales</option>
@@ -101,7 +102,7 @@
 
                 <div class="form-group">
                     <label for="servicio">Servicio</label>
-                    <select id="servicio" name="servicio" required>
+                    <select id="slcServicio" name="servicio" required>
                         <option value="" disabled selected>Seleccionar</option>
                         <option>Corte de pelo</option>
                         <option>Rasurada de barba</option>
@@ -118,7 +119,7 @@
 
                 <div class="form-group">
                     <label for="hora">Seleccione un turno</label>
-                    <select id="hora" name="hora" required>
+                    <select id="slcHora" name="hora" required>
                         <option value="" disabled selected>Seleccionar</option>
                         <option>09:00</option>
                         <option>09:30</option>
@@ -128,8 +129,7 @@
                         <option>20:30</option>
                     </select>
                 </div>
-
-                <button type="submit" class="btn-primary btn-block">Reservar</button>
+                <button type="submit" id="btnReservar" class="btn-primary btn-block">Reservar</button>
             </form>
         </div>
     </main>
@@ -137,21 +137,23 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__brand">
-            <img src="assets/icons/user.svg" alt="Avatar Superbarbería" class="footer__icon" />
+            <img src="img/logo_claro.png" alt="Avatar Superbarbería" class="footer__icon" />
             <span class="footer__name">Superbarbería</span>
         </div>
 
         <nav class="footer__links" aria-label="Redes y contacto">
             <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
-                <img src="assets/icons/mail.svg" alt="" class="footer__icon" />
+                <img src="img/gmail_logo.png" alt="" class="footer__icon" />
             </a>
+
             <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
                 rel="noopener">
-                <img src="assets/icons/whatsapp.svg" alt="" class="footer__icon" />
+                <img src="img/whatsapp_logo.png" alt="" class="footer__icon" />
             </a>
+
             <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
                 target="_blank" rel="noopener">
-                <img src="assets/icons/instagram.svg" alt="" class="footer__icon" />
+                <img src="img/ig_logo.png" alt="" class="footer__icon" />
             </a>
         </nav>
     </footer>
