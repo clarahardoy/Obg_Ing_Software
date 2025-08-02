@@ -159,7 +159,7 @@ function realizarReserva() {
   let nombre = document.querySelector("#txtNombre").value;
   let apellido = document.querySelector("#txtApellido").value;
   let email = document.querySelector("#txtEmail").value;
-  let celular = document.querySelector("#txtTelefono").value);
+  let celular = document.querySelector("#txtTelefono").value;
   let idBarbero = parseInt(document.querySelector("#slcBarbero").value);
   let idServicio = parseInt(document.querySelector("#slcServicio").value);
   let hora = document.querySelector("#slcHora").value;
@@ -171,7 +171,6 @@ function realizarReserva() {
     return;
   } else if(dia)
 }
-
 /* ======== EJEMPLO DE USO (puedes borrar) ======== */
 // sistema.agregarReserva("Ana", "López", "ana@mail.com", "099123456",
 //                        1, 3, "VIERNES", "2025-08-08");
