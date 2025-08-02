@@ -1,12 +1,3 @@
-.equipo {
-    padding: 4rem 0;
-}
-
-/* Título */
-.equipo h2 {
-    margin-bottom: 3rem;
-}
-
 /* Grilla*/
 .equipo-grid {
     display: grid;

@@ -1,0 +1,79 @@
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.info-card h3 {
+    color: var(--blanco);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.contacto-item:last-child {
+    margin-bottom: 0;
+}
+
+.contacto-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--marronOscuro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+}
+
+.contacto-details h4 {
+    color: var(--blanco);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.contacto-details p {
+    color: var(--blanco);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1;
+}
+
+/* MAPA */
+.mapa-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.65rem;
+    padding: 2rem;
+    border: 2px solid transparent;
+}
+
+.mapa-container h3 {
+    color: var(--blanco);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.mapa {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.mapa iframe {
+    width: 100%;
+}
