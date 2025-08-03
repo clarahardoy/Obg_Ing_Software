@@ -1,4 +1,4 @@
-/* Nav mobile */
+/* Hamburguesa - Nav mobile */
 const btnMenu = document.getElementById('btnMenu');
 const navLinks = document.getElementById('navLinks');
 
@@ -16,163 +16,191 @@ navLinks.querySelectorAll('a').forEach(link =>
   })
 );
 
-/* CONTADORES GLOBALES */
-let contadorReservas = 1;
-let contadorBarberos = 1;
-let contadorServicios = 1;
+//-------------------------------------------------------------------------------------
+// -----------------------------
+// Contadores globales de IDs:
+let idServicio = 0;
+let idBarbero = 0;
+let idReserva = 0;
 
-/* CLASES DE DOMINIO */
-class Reserva {
-  constructor(nombre, apellido, email, celular, idBarbero, idServicio, hora, fecha) {
-    this.id = contadorReservas;
-    this.nombre = nombre.toUpperCase();
-    this.apellido = apellido.toUpperCase();
-    this.email = email.toUpperCase();
-    this.celular = celular;
-    this.idBarbero = idBarbero;
-    this.idServicio = idServicio;
-    this.hora = hora;
-    this.fecha = fecha;
-    contadorReservas++;
+// -----------------------------
+// Clases del sistema:
+class Servicio {
+  constructor({ nombre, descripcion, precio, duracion = 30, img = "" }) {
+    this.id = idServicio++;
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.precio = precio;
+    this.duracion = duracion;
+    this.img = img;
   }
 }
 
 class Barbero {
-  constructor(imagen, nombreCompleto, descripcion) {
-    this.id = contadorBarberos;
-    this.imagen = imagen;
-    this.nombre = nombreCompleto.toUpperCase();
+  constructor({ nombre, descripcion = "", img = "" }) {
+    this.id = idBarbero++;
+    this.nombre = nombre;
     this.descripcion = descripcion;
-    contadorBarberos++;
+    this.img = img;
   }
 }
 
-class Servicio {
-  constructor(imagen, nombre, descripcion, precio) {
-    this.id = contadorServicios;
-    this.imagen = imagen;
-    this.nombre = nombre.toUpperCase();
-    this.descripcion = descripcion;
-    this.precio = precio;
-    contadorServicios++;
+class Reserva {
+  constructor({ nombre, apellido, celular, email, barberoId, servicioId, fechaHora }) {
+    this.id = idReserva++;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.celular = celular;
+    this.email = email;
+    this.barberoId = barberoId;
+    this.servicioId = servicioId;
+    this.fechaHora = fechaHora;
   }
 }
 
-/* ========== CLASE SISTEMA ========== */
-class Sistema {
+// ----------------------------- SISTEMA -----------------------------
+export class Sistema {
   constructor() {
+    this.reservas = this.leerReservasLS();
 
-    this.listaReservas = []; // inicialmente VACÍO
-
-    /* PRECARGA */
-    this.listaBarberos = [
-      new Barbero("assets/images/barbero1.jpg", "Martín Ramírez",
-        "15 años de experiencia · Maestro en cortes clásicos y afeitados a navaja."),
-      new Barbero("assets/images/barbero2.jpg", "Diego Morales",
-        "12 años de experiencia · Especialista en fades y degradados modernos."),
-      new Barbero("assets/images/barbero3.jpg", "Sebastián Castro",
-        "10 años de experiencia · Colorista experto en mechas y decoloración."),
-      new Barbero("assets/images/barbero4.jpg", "Alejandro Torres",
-        "8 años de experiencia · Gurú del cuidado y diseño de barbas."),
-      new Barbero("assets/images/barbero5.jpg", "Javier Herrera",
-        "7 años de experiencia · Stylist en texturizados y undercuts creativos."),
-      new Barbero("assets/images/barbero6.jpg", "Nicolás Gómez",
-        "5 años de experiencia · Artista en diseños y patrones con máquina.")
-    ];
-
-    /* -------- SERVICIOS PRECARGADOS -------- */
+    // PRECARGA:
     this.listaServicios = [
-      new Servicio("img/servicio_corte.svg", "Corte de Pelo",
-        "Cortes clásicos y modernos con técnicas profesionales. Incluye lavado, corte y peinado.",
-        450),
-      new Servicio("img/servicio_barba.svg", "Rasurada de Barba",
-        "Arreglo y modelado de barba con aceites y productos premium. Incluye hidratación.",
-        350),
-      new Servicio("img/servicio_colorimetria.svg", "Colorimetría",
-        "Tintes profesionales y mechas con productos de alta calidad. Consulta previa incluida.",
-        500),
-      new Servicio("img/servicio_lavado.svg", "Lavado y Acondicionamiento de Cabello",
-        "Lavado y acondicionamiento de cabello con productos premium. Incluye hidratación.",
-        400),
-      new Servicio("img/servicio_premium.svg", "Premium",
-        "Nutrición con minerales que nutren el cabello. Incluye hidratación.",
-        800)
+      new Servicio({
+        nombre: "Corte de Pelo",
+        descripcion: "Cortes clásicos y modernos con técnicas profesionales. Incluye lavado, corte y peinado.",
+        precio: 450,
+        img: "assets/images/servicio_corte.jpg",
+      }),
+      new Servicio({
+        nombre: "Rasurada de Barba",
+        descripcion: "Arreglo y modelado de barba con aceites y productos premium. Incluye hidratación.",
+        precio: 350,
+        img: "assets/images/servicio_barba.jpg",
+      }),
+      new Servicio({
+        nombre: "Colorimetría",
+        descripcion: "Tintes profesionales y mechas con productos de alta calidad. Consulta previa incluida.",
+        precio: 500,
+        img: "assets/images/servicio_colorimetria.jpg",
+      }),
+      new Servicio({
+        nombre: "Lavado y Acondicionamiento",
+        descripcion: "Lavado y acondicionamiento de cabello con productos premium. Incluye hidratación.",
+        precio: 400,
+        img: "assets/images/servicio_lavado.jpg",
+      }),
+      new Servicio({
+        nombre: "Tratamiento Premium",
+        descripcion: "Nutrición profunda con minerales que revitalizan el cabello.",
+        precio: 800,
+        img: "assets/images/servicio_premium.jpg",
+      }),
     ];
 
-    /* usuario logueado (si implementas login) */
-    this.usuarioLogueado = null;
+    this.listaBarberos = [
+      new Barbero({
+        nombre: "Martín Ramírez",
+        descripcion: "15 años de experiencia · Maestro en cortes clásicos y afeitados a navaja.",
+        img: "assets/images/barbero1.jpg",
+      }),
+      new Barbero({
+        nombre: "Diego Morales",
+        descripcion: "12 años de experiencia · Especialista en fades y degradados modernos.",
+        img: "assets/images/barbero2.jpg",
+      }),
+      new Barbero({
+        nombre: "Sebastián Castro",
+        descripcion: "10 años de experiencia · Colorista experto en mechas y decoloración.",
+        img: "assets/images/barbero3.jpg",
+      }),
+      new Barbero({
+        nombre: "Alejandro Torres",
+        descripcion: "8 años de experiencia · Gurú del cuidado y diseño de barbas.",
+        img: "assets/images/barbero4.jpg",
+      }),
+      new Barbero({
+        nombre: "Javier Herrera",
+        descripcion: "7 años de experiencia · Stylist en texturizados y undercuts creativos.",
+        img: "assets/images/barbero5.jpg",
+      }),
+      new Barbero({
+        nombre: "Nicolás Gómez",
+        descripcion: "5 años de experiencia · Artista en diseños y patrones con máquina.",
+        img: "assets/images/barbero6.jpg",
+      }),
+    ];
   }
 
-  /* ---------- UTILIDADES ----------- */
+  // ---------- Métodos privados ----------
 
-  /**
-   * Devuelve el primer elemento de un array cuya propiedad === valor, o null.
-   * @param {Array} array
-   * @param {String} propiedad
-   * @param {*} valor
-   */
-  buscarElemento(array, propiedad, valor) {
-    let objeto = null;
-    for (let i = 0; i < array.length; i++) {
-      if (array[i][propiedad] === valor) {
-        objeto = array[i];
-        break;
-      }
+  leerReservasLS() {
+    const raw = window.localStorage.getItem("reservas");
+    try {
+      return raw ? JSON.parse(raw).map(r => new Reserva(r)) : [];
+    } catch {
+      console.warn("Reservas corruptas en LocalStorage. Reiniciando.");
+      return [];
     }
-    return objeto;
-  }
-
-  /**
-   * Crea una nueva reserva y la agrega a listaReservas.
-   * Valida que existan barbero y servicio.
-   */
-  agregarReserva(nombre, apellido, email, celular, idBarbero, idServicio, hora, fecha) {
-    const barbero = this.buscarElemento(this.listaBarberos, "id", idBarbero);
-    const servicio = this.buscarElemento(this.listaServicios, "id", idServicio);
-
-    if (!barbero || !servicio) {
-      throw new Error("Barbero o servicio inexistente");
-    }
-
-    const nuevaReserva = new Reserva(
-      nombre, apellido, email, celular,
-      idBarbero, idServicio, hora, fecha
-    );
-    this.listaReservas.push(nuevaReserva);
-  }
-
-  /**
-   * Devuelve todas las reservas de un día concreto (string en mayúsculas).
-   */
-  reservasPorDia(dia) {
-    return this.listaReservas.filter(r => r.dia === dia.toUpperCase());
   }
 }
 
-/* ========== INSTANCIA ÚNICA ========= */
-let sistema = new Sistema();
-
-
+// ----------------------------- RF-01: Reservar turno -----------------------------
 document.querySelector("#btnReservar").addEventListener("click", realizarReserva);
 
 function realizarReserva() {
-  let nombre = document.querySelector("#txtNombre").value;
-  let apellido = document.querySelector("#txtApellido").value;
-  let email = document.querySelector("#txtEmail").value;
-  let celular = document.querySelector("#txtTelefono").value;
-  let idBarbero = parseInt(document.querySelector("#slcBarbero").value);
-  let idServicio = parseInt(document.querySelector("#slcServicio").value);
-  let hora = document.querySelector("#slcHora").value;
-  let fecha = document.querySelector("#txtFecha").value;
+  const mensajeEl = document.getElementById("mensajeError");
 
-  // Validación de campos
-  if (!nombre || !apellido || !email || !celular || isNaN(idBarbero) || isNaN(idServicio) || !dia || !fecha) {
-    alert("Todos los campos son obligatorios.");
-    return;
-  } else if(dia)
+  let nombre = document.getElementById("txtNombre").value;
+  let apellido = document.getElementById("txtApellido").value;
+  let email = document.getElementById("txtEmail")?.value;
+  let celular = document.getElementById("txtTelefono")?.value;
+  let barberoId = parseInt(document.getElementById("slcBarbero").value);
+  let servicioId = parseInt(document.getElementById("slcServicio").value);
+  let fechaInput = document.getElementById("fecha")?.value;
+  let horaInput = document.getElementById("slcHora")?.value;
+
+  // ------------------ Validaciones ------------------
+  if (!nombre || !apellido || !celular || !email || !fechaInput || !horaInput) {
+    return mostrarError("Todos los campos son obligatorios", mensajeEl);
+  }
+
+  if (!/^\d+$/.test(celular)) {
+    return mostrarError("Teléfono no válido", mensajeEl);
+  }
+
+  if (!/^\S+@\S+\.com$/i.test(email)) {
+    return mostrarError("Email inválido.", mensajeEl);
+  }
+
+  const fechaHora = new Date(`${fechaInput}T${horaInput}`);
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  if (fechaHora < hoy) {
+    return mostrarError("Fecha no válida", mensajeEl);
+  }
+
+  // Pasa las validaciones
+  // ------------------ Alta de reserva ------------------
+  const nuevaReserva = new Reserva({
+    nombre,
+    apellido,
+    celular,
+    email,
+    barberoId,
+    servicioId,
+    fechaHora,
+  });
+
+  sistema.reservas.push(nuevaReserva);
+  window.localStorage.setItem("reservas", JSON.stringify(sistema.reservas));
+
+  if (mensajeEl) mensajeEl.textContent = "Su turno se reservó correctamente.";
 }
-/* ======== EJEMPLO DE USO (puedes borrar) ======== */
-// sistema.agregarReserva("Ana", "López", "ana@mail.com", "099123456",
-//                        1, 3, "VIERNES", "2025-08-08");
-// console.log(sistema.listaReservas);
 
+function mostrarError(msg, el) {
+  if (el) {
+    el.textContent = msg;
+  } else {
+    alert(msg);
+  }
+}

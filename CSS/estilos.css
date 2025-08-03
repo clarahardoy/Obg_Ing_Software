@@ -25,11 +25,12 @@ body {
 }
 
 .container {
-    width: 1200px;
-    max-width: 90%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     padding: 25px 0;
 }
+
 
 h1,
 h2,
@@ -309,7 +310,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
 
     .hamburger {
         display: flex;
@@ -318,20 +319,23 @@ section {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
-        flex-direction: column;
-        align-items: center;
-        background: var(--negro);
-        width: 70%;
-        max-width: 320px;
+        right: 0;
+        transform: translateX(100%);
+        width: 70vw;
         height: 100vh;
         padding-top: 6.5rem;
+        flex-direction: column;
         gap: 2rem;
-        transition: right .35s ease-in-out;
+        flex: none;
+        background: var(--negro);
+        box-shadow: none;
+        z-index: 101;
     }
 
     .nav-links.open {
-        right: 0;
+        transform: translateX(0);
+        overflow-y: auto;
+        box-shadow: -9999px 0 0 9999px rgba(0, 0, 0, .8);
     }
 
     .nav-links a {
