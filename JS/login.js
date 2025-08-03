@@ -12,12 +12,14 @@ const contrasenaAdmin = 'admin123';
 const habilitarBotonLogin = () => {
   const emailCompletado = emailInput.value.trim() !== '';
   const contrasenaCompletada = contrasenaInput.value.trim() !== '';
+  let emailValido = false;
+  
   if (emailValidacion.test(emailInput.value)) {
     emailValido = true;
   } else {
     emailValido = false;
-    
   }
+  
   btnLogin.disabled = !(emailCompletado && contrasenaCompletada && emailValido);
 };
 
@@ -31,21 +33,40 @@ const actualizarMensajeDeErrorDeMail = () => {
 };
 
 const validarCredenciales = () => {
-  const email = emailInput.value.trim();
-  const contrasena = contrasenaInput.value.trim();
+  const email = emailInput.value;
+  const contrasena = contrasenaInput.value;
 
   if (email === emailAdmin && contrasena === contrasenaAdmin) {
-    window.location.href = 'index.html';
+    window.location.href = 'reservas.html';
   }
 };
 
-emailInput.addEventListener('input', () => {
-  habilitarBotonLogin();
-  actualizarMensajeDeErrorDeMail();
-});
-contrasenaInput.addEventListener('input', habilitarBotonLogin);
+if (emailInput) {
+  emailInput.addEventListener('input', () => {
+    habilitarBotonLogin();
+    actualizarMensajeDeErrorDeMail();
+  });
+}
 
-formLogin.addEventListener('submit', function(event) {
-  event.preventDefault();
-  validarCredenciales();
-});
+if (contrasenaInput) {
+  contrasenaInput.addEventListener('input', habilitarBotonLogin);
+}
+
+if (formLogin) {
+  formLogin.addEventListener('submit', function(event) {
+    event.preventDefault();
+    validarCredenciales();
+  });
+}
+
+// EXPORTAR PARA EL TESTING
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    emailValidacion,
+    emailAdmin,
+    contrasenaAdmin,
+    habilitarBotonLogin,
+    actualizarMensajeDeErrorDeMail,
+    validarCredenciales
+  };
+}
