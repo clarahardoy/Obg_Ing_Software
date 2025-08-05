@@ -16,7 +16,7 @@
     padding: 7rem 0 4rem;
     min-height: 100vh;
 
-    background: url("../img/reserva_bg.jpg") center/cover no-repeat fixed;
+    /*background: url("../img/reserva_bg.jpg") center/cover no-repeat fixed;*/
 }
 
 /* Wrapper de las dos columnas */
@@ -120,6 +120,22 @@
     border-color: var(--marronClaro);
     box-shadow: 0 0 0 3px rgba(115, 65, 36, .25);
     outline: none;
+}
+
+/* Mensajes */
+.mensaje {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.mensaje.error {
+    color: #c62828;
+}
+
+.mensaje.success {
+    color: #2e7d32;
 }
 
 /* ------------------------------------------------------------------- */

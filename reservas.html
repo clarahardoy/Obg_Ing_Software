@@ -91,12 +91,6 @@
                     <label for="barbero">Barbero</label>
                     <select id="slcBarbero" name="barbero" required>
                         <option value="" disabled selected>Seleccionar</option>
-                        <option>Martín&nbsp;Ramírez</option>
-                        <option>Diego&nbsp;Morales</option>
-                        <option>Sebastián&nbsp;Castro</option>
-                        <option>Alejandro&nbsp;Torres</option>
-                        <option>Javier&nbsp;Herrera</option>
-                        <option>Nicolás&nbsp;Gómez</option>
                     </select>
                 </div>
 
@@ -104,11 +98,6 @@
                     <label for="servicio">Servicio</label>
                     <select id="slcServicio" name="servicio" required>
                         <option value="" disabled selected>Seleccionar</option>
-                        <option>Corte de pelo</option>
-                        <option>Rasurada de barba</option>
-                        <option>Colorimetría</option>
-                        <option>Lavado y acondicionamiento</option>
-                        <option>Premium (nutrición)</option>
                     </select>
                 </div>
 
@@ -121,14 +110,9 @@
                     <label for="hora">Seleccione un turno</label>
                     <select id="slcHora" name="hora" required>
                         <option value="" disabled selected>Seleccionar</option>
-                        <option>09:00</option>
-                        <option>09:30</option>
-                        <option>10:00</option>
-                        <option>10:30</option>
-                        <option>11:00</option>
-                        <option>20:30</option>
                     </select>
                 </div>
+                <p id="mensaje" class="mensaje"></p>
                 <button type="submit" id="btnReservar" class="btn-primary btn-block">Reservar</button>
             </form>
         </div>
@@ -158,8 +142,7 @@
         </nav>
     </footer>
 
-    <script src="JS/script.js"></script>
-    <script src="JS/reserva.js"></script>
+    <script type="module" src="JS/script.js"></script>
 </body>
 
 </html>
