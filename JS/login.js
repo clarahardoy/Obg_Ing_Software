@@ -3,7 +3,7 @@ const contrasenaInput = document.getElementById('password');
 const btnLogin = document.getElementById('login-btn');
 const formLogin = document.getElementById('login-form');
 const emailError = document.getElementById('error-mail');
-
+const passwordError = document.getElementById('error-password');
 const emailValidacion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const emailAdmin = 'admin@admin.com';
@@ -37,7 +37,9 @@ const validarCredenciales = () => {
   const contrasena = contrasenaInput.value;
 
   if (email === emailAdmin && contrasena === contrasenaAdmin) {
-    window.location.href = 'reservas.html';
+    window.location.href = 'listadoReservas.html';
+  } else {
+    passwordError.style.display = 'block';
   }
 };
 

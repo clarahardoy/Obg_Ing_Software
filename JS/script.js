@@ -22,8 +22,8 @@ let idServicio = 0,
 
 /* ------------------------- Modelos ----------------------- */
 class Servicio {
-  constructor({ nombre, descripcion, precio, duracion = 30, img = "" }) {
-    this.id = idServicio++;
+  constructor({ id, nombre, descripcion, precio, duracion = 30, img = "" }) {
+    this.id = id !== undefined ? id : idServicio++;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
@@ -32,8 +32,8 @@ class Servicio {
   }
 }
 class Barbero {
-  constructor({ nombre, descripcion = "", img = "" }) {
-    this.id = idBarbero++;
+  constructor({ id, nombre, descripcion = "", img = "" }) {
+    this.id = id !== undefined ? id : idBarbero++;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.img = img;
@@ -64,21 +64,21 @@ class Sistema {
       idReserva = Math.max(...this.reservas.map(r => r.id)) + 1;
     }
 
-    /* Catálogos precargados */
+    /* Catálogos precargados con IDs fijos */
     this.listaServicios = [
-      new Servicio({ nombre: "Corte de Pelo", descripcion: "Corte + lavado + peinado", precio: 450, img: "assets/images/servicio_corte.jpg" }),
-      new Servicio({ nombre: "Rasurada de Barba", descripcion: "Arreglo y modelado de barba", precio: 350, img: "assets/images/servicio_barba.jpg" }),
-      new Servicio({ nombre: "Colorimetría", descripcion: "Tintes y mechas", precio: 500, img: "assets/images/servicio_colorimetria.jpg" }),
-      new Servicio({ nombre: "Lavado y Acondicionamiento", descripcion: "Lavado premium + hidratación", precio: 400, img: "assets/images/servicio_lavado.jpg" }),
-      new Servicio({ nombre: "Tratamiento Premium", descripcion: "Nutrición profunda", precio: 800, img: "assets/images/servicio_premium.jpg" })
+      new Servicio({ id: 0, nombre: "Corte de Pelo", descripcion: "Corte + lavado + peinado", precio: 450, img: "assets/images/servicio_corte.jpg" }),
+      new Servicio({ id: 1, nombre: "Rasurada de Barba", descripcion: "Arreglo y modelado de barba", precio: 350, img: "assets/images/servicio_barba.jpg" }),
+      new Servicio({ id: 2, nombre: "Colorimetría", descripcion: "Tintes y mechas", precio: 500, img: "assets/images/servicio_colorimetria.jpg" }),
+      new Servicio({ id: 3, nombre: "Lavado y Acondicionamiento", descripcion: "Lavado premium + hidratación", precio: 400, img: "assets/images/servicio_lavado.jpg" }),
+      new Servicio({ id: 4, nombre: "Tratamiento Premium", descripcion: "Nutrición profunda", precio: 800, img: "assets/images/servicio_premium.jpg" })
     ];
     this.listaBarberos = [
-      new Barbero({ nombre: "Martín Ramírez", descripcion: "15 años de experiencia", img: "assets/images/barbero1.jpg" }),
-      new Barbero({ nombre: "Diego Morales", descripcion: "Especialista en fades", img: "assets/images/barbero2.jpg" }),
-      new Barbero({ nombre: "Sebastián Castro", descripcion: "Colorista", img: "assets/images/barbero3.jpg" }),
-      new Barbero({ nombre: "Alejandro Torres", descripcion: "Diseño de barbas", img: "assets/images/barbero4.jpg" }),
-      new Barbero({ nombre: "Javier Herrera", descripcion: "Texturizados", img: "assets/images/barbero5.jpg" }),
-      new Barbero({ nombre: "Nicolás Gómez", descripcion: "Diseños con máquina", img: "assets/images/barbero6.jpg" })
+      new Barbero({ id: 0, nombre: "Martín Ramírez", descripcion: "15 años de experiencia", img: "assets/images/barbero1.jpg" }),
+      new Barbero({ id: 1, nombre: "Diego Morales", descripcion: "Especialista en fades", img: "assets/images/barbero2.jpg" }),
+      new Barbero({ id: 2, nombre: "Sebastián Castro", descripcion: "Colorista", img: "assets/images/barbero3.jpg" }),
+      new Barbero({ id: 3, nombre: "Alejandro Torres", descripcion: "Diseño de barbas", img: "assets/images/barbero4.jpg" }),
+      new Barbero({ id: 4, nombre: "Javier Herrera", descripcion: "Texturizados", img: "assets/images/barbero5.jpg" }),
+      new Barbero({ id: 5, nombre: "Nicolás Gómez", descripcion: "Diseños con máquina", img: "assets/images/barbero6.jpg" })
     ];
 
     /* Horarios 09:00-21:00 cada 30' */
@@ -99,9 +99,9 @@ class Sistema {
       if (r.barberoId === barberoId) {
         const f = new Date(r.fechaHora);
         if (f.toISOString().split('T')[0] === fechaISO) {
+          ocupadas.add(f.toTimeString().slice(0, 5));
         
-          const horaDesdeISO = f.toISOString().split('T')[1].slice(0, 5);
-          ocupadas.add(horaDesdeISO);
+         
         }
       }
     }

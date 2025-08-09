@@ -25,7 +25,7 @@ describe("RESERVAS – TESTS UNITARIOS", () => {
         });
 
         test("excluye la hora ya reservada para ese barbero y fecha", () => {
-            /* Creo una reserva en el slot 10:00 */
+            /* Creo una reserva en el slot 10:00 (13:00 cuando se guarda en el sistema)*/
             const reserva = new Reserva({
                 nombre: "Ana",
                 apellido: "Gómez",
@@ -33,7 +33,7 @@ describe("RESERVAS – TESTS UNITARIOS", () => {
                 email: "ana@example.com",
                 barberoId: 2,
                 servicioId: 0,
-                fechaHora: "2025-08-05T10:00:00.000Z",
+                fechaHora: "2025-08-05T13:00:00.000Z",
             });
             sistema.agregarReserva(reserva);
 
@@ -117,7 +117,7 @@ describe("RESERVAS – TESTS UNITARIOS", () => {
 
             /* Intento reservar el mismo slot */
             const horas = sistema.horasDisponibles(3, "2025-08-10");
-            expect(horas).not.toContain("18:00");
+            expect(horas).not.toContain("15:00"); // 15:00 es la hora de la reserva 1 guardada en el sistema porque la convierte a UTC
         });
     });
 

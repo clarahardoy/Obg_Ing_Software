@@ -145,12 +145,12 @@ describe('LOG IN TESTS UNITARIOS', () => {
   });
 
   describe('VALIDACION DE CREDENCIALES', () => {
-    test('redirigir a reservas.html con credenciales de admin correctas', () => {
+    test('redirigir a listadoReservas.html con credenciales de admin correctas', () => {
       emailInput.value = emailAdmin;
       contrasenaInput.value = contrasenaAdmin;
       
       validarCredenciales();
-      expect(mockLocation.href).toBe('reservas.html');
+      expect(mockLocation.href).toBe('listadoReservas.html');
     });
 
     test('no redirigir con email incorrecto', () => {

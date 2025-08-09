@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservas | Administrador</title>
 
-    <!-- Tus estilos globales -->
+    <!-- estilos globales -->
     <link rel="stylesheet" href="CSS/estilos.css">
     <link rel="stylesheet" href="CSS/listadoReservas.css">
 </head>
@@ -34,16 +34,16 @@
     </header>
     <!-- RF-08: Listado de Reservas – Administrador -->
     <main class="main">
-        <section class="reservas-admin page-offset">
+        <section class="reservas-admin">
             <div class="container">
                 <header class="section-head">
                     <h1 class="titulo-seccion">Reservas</h1>
                     <p class="subtitulo-seccion">Visualiza las próximas reservas</p>
                 </header>
 
-                <!-- AQUÍ el JS inyecta las tarjetas -->
-                <div id="listaReservas" class="reservas-grid"></div>
-
+                <!-- aca el JS inyecta las tarjetas -->
+                <div id="listaReservas" class="reservas-lista">
+                </div>
                 <div class="acciones-reservas">
                     <button id="btnVerMas" class="btn btn-primario">Ver más</button>
                 </div>
@@ -52,7 +52,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" style="position: fixed; bottom: 0; width: 100%;">
         <div class="footer__brand">
             <img src="img/logo_claro.png" alt="Avatar Superbarbería" class="footer__icon" />
             <span class="footer__name">Superbarbería</span>
@@ -75,7 +75,9 @@
         </nav>
     </footer>
 
-    <!-- AÑADIR SCRIPT -->
+    <!-- SCRIPTS -->
+    <script src="JS/script.js"></script>
+    <script src="JS/listadoReservas.js"></script>
 </body>
 
 </html>
