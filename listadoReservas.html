@@ -9,6 +9,13 @@
     <!-- estilos globales -->
     <link rel="stylesheet" href="CSS/estilos.css">
     <link rel="stylesheet" href="CSS/listadoReservas.css">
+    
+    <script src="JS/auth.js"></script>
+    <script>
+        if (!verificarAcceso()) {
+            // auth.js se ejecuta para redirigir a login.html
+        }
+    </script>
 </head>
 
 <body>
@@ -28,7 +35,7 @@
             </button>
 
             <nav id="navLinks" class="nav-links">
-                <a href="index.html" class="btn-outline">Cerrar sesión</a>
+                <a class="btn-outline" onclick="cerrarSesion()">Cerrar sesión</a>
             </nav>
         </div>
     </header>

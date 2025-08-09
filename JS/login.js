@@ -37,6 +37,7 @@ const validarCredenciales = () => {
   const contrasena = contrasenaInput.value;
 
   if (email === emailAdmin && contrasena === contrasenaAdmin) {
+    localStorage.setItem('ADMIN_LOGGEADO', 'true');
     window.location.href = 'listadoReservas.html';
   } else {
     passwordError.style.display = 'block';
