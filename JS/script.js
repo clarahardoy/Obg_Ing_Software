@@ -249,7 +249,7 @@ function realizarReserva(s) {
     return showMensaje('Teléfono no válido', 'error');
 
   if (!/^\S+@\S+\.com$/i.test(email))
-    return showMensaje('Email inválido', 'error');
+    return showMensaje('Email no válido', 'error');
 
   const fechaHora = new Date(`${fechaVal}T${horaVal}`);
   if (fechaHora < new Date())
@@ -267,14 +267,4 @@ function realizarReserva(s) {
 
   showMensaje('Su turno se reservó correctamente.', 'success');
   document.getElementById('formReserva')?.reset();
-}
-
-
-/* --- EXPORTAR PARA TESTING --- */
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = {
-    Sistema,
-    Reserva,
-    realizarReserva,
-  };
 }
