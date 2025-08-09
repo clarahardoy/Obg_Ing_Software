@@ -246,6 +246,24 @@ section {
 
 /*------------------------------------------------------------------*/
 
+/* Mensajes */
+.mensaje {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.mensaje.error {
+    color: #c62828;
+}
+
+.mensaje.success {
+    color: #2e7d32;
+}
+
+/*------------------------------------------------------------------*/
+
 /* FOOTER */
 .footer {
     width: 100%;
@@ -300,7 +318,29 @@ section {
 /* --------------------------------------------------------------------- */
 
 /* RESPONSIVE */
-@media (max-width: 991px) {
+/* === TABLET === */
+@media (max-width: 992px) {
+    .container {
+        padding: 20px 0;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 2.25rem;
+    }
+
+    .nav-inner {
+        height: 68px;
+    }
+
+    .nav-links {
+        gap: 1.1rem;
+    }
+
     .landing h1 {
         font-size: 2.2rem;
     }
@@ -308,9 +348,27 @@ section {
     .landing h2 {
         font-size: 1.15rem;
     }
+
+    .landing-desc {
+        font-size: .95rem;
+        max-width: 540px;
+    }
 }
 
-@media (max-width: 500px) {
+/* === MOBILE === */
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+        padding: 18px 0;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .nav-inner {
+        height: 64px;
+    }
 
     .hamburger {
         display: flex;
@@ -321,14 +379,12 @@ section {
         top: 0;
         right: 0;
         transform: translateX(100%);
-        width: 70vw;
+        width: 72vw;
         height: 100vh;
-        padding-top: 6.5rem;
+        padding-top: 6rem;
         flex-direction: column;
-        gap: 2rem;
-        flex: none;
+        gap: 1.75rem;
         background: var(--negro);
-        box-shadow: none;
         z-index: 101;
     }
 
@@ -339,22 +395,84 @@ section {
     }
 
     .nav-links a {
+        font-size: 1rem;
+    }
+
+    .logo-icon img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .landing {
+        min-height: 480px;
+        height: 72vh;
+    }
+
+    .landing h1 {
+        font-size: 2rem;
+    }
+
+    .landing h2 {
         font-size: 1.05rem;
+        margin: .5rem 0 1rem;
     }
 
-    .footer__name {
-        display: none;
+    .landing-desc {
+        font-size: .9rem;
+        margin-bottom: 1.5rem;
     }
 
-    .footer__icon {
-        width: 1.5rem;
-        height: 1.5rem;
+    .btn-primary {
+        padding: .7rem 1.5rem;
     }
-
     .footer {
-        padding: 1rem 2rem;
+        padding: .9rem 1rem;
+    }
+
+    .footer__links {
+        gap: .6rem;
     }
 }
+
+/* === EXTRA-CHICO === */
+@media (max-width: 420px) {
+    .container {
+        width: 94%;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 2rem;
+    }
+
+    .landing {
+        min-height: 440px;
+        height: 68vh;
+    }
+
+    .landing h1 {
+        font-size: 1.8rem;
+    }
+
+    .landing h2 {
+        font-size: 1rem;
+    }
+
+    .landing-desc {
+        font-size: .88rem;
+        max-width: 420px;
+    }
+
+    .btn-outline {
+        padding: .24rem .8rem;
+        border-radius: 18px;
+    }
+    .footer__icon {
+        width: 1.35rem;
+        height: 1.35rem;
+    }
+}
+
 
 /* Animación “X” hamburguesa */
 .hamburger.active span:nth-child(1) {

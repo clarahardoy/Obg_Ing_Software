@@ -1,0 +1,130 @@
+.page-offset {
+    padding-top: clamp(16px, 4vh, 32px);
+}
+
+/* Encabezado de sección */
+.reservas-admin .section-head {
+    margin-bottom: 1rem;
+}
+
+.reservas-admin .titulo-seccion {
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    text-transform: none;
+    color: var(--blanco);
+    line-height: 1.1;
+}
+
+.reservas-admin .subtitulo-seccion {
+    color: color-mix(in oklab, var(--blanco) 65%, #9aa0a6);
+    font-size: .9rem;
+    margin-top: .25rem;
+}
+
+/* Grid de tarjetas */
+.reservas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+/* Tarjeta */
+.reserva-card {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 14px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 14px;
+    padding: 14px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.reserva-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    border-color: rgba(255, 255, 255, .12);
+}
+
+/* Placeholder de imagen como en el mockup (gris suave con icono) */
+.reserva-media {
+    border-radius: 10px;
+    background:
+        radial-gradient(circle at 72% 28%, rgba(0, 0, 0, .06) 0 48px, transparent 49px),
+        linear-gradient(135deg, rgba(0, 0, 0, .06), rgba(255, 255, 255, .06)),
+        #e9ecef;
+    min-height: 140px;
+    filter: saturate(.2);
+}
+
+/* Texto de la tarjeta */
+.reserva-body p {
+    font-family: 'Roboto', sans-serif;
+    font-size: .92rem;
+    line-height: 1.35;
+    color: var(--blanco);
+    margin: .22rem 0;
+}
+
+.reserva-body p span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: color-mix(in oklab, var(--blanco) 85%, #ddd);
+}
+
+/* Pie con acciones */
+.acciones-reservas {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.btn {
+    appearance: none;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, color .2s ease;
+}
+
+.btn-primario {
+    background: var(--negro);
+    color: var(--blanco);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1);
+}
+
+.btn-primario:hover {
+    background: var(--marronOscuro);
+    color: var(--blanco);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, .35);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .reservas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reserva-card {
+        grid-template-columns: 36% 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .reservas-admin .titulo-seccion {
+        font-size: 1.4rem;
+    }
+
+    .reserva-card {
+        grid-template-columns: 1fr;
+    }
+
+    .reserva-media {
+        min-height: 120px;
+    }
+}

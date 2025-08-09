@@ -15,8 +15,6 @@
 .reserva-section {
     padding: 7rem 0 4rem;
     min-height: 100vh;
-
-    /*background: url("../img/reserva_bg.jpg") center/cover no-repeat fixed;*/
 }
 
 /* Wrapper de las dos columnas */
@@ -26,14 +24,6 @@
     gap: 3rem;
     justify-content: center;
     align-items: flex-start;
-}
-
-@media (min-width: 992px) {
-    .reserva-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 }
 
 /* Texto */
@@ -65,19 +55,6 @@
     padding: 2.3rem 2.6rem;
     border-radius: 1.25rem;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
-}
-
-@media (max-width: 768px) {
-    .reserva-form {
-        padding: 1.8rem 1.6rem;
-        border-radius: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .reserva-form {
-        padding: 1.5rem 1.3rem;
-    }
 }
 
 /* ------------------------------------------------------------------ */
@@ -122,22 +99,6 @@
     outline: none;
 }
 
-/* Mensajes */
-.mensaje {
-    margin-top: 1rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.mensaje.error {
-    color: #c62828;
-}
-
-.mensaje.success {
-    color: #2e7d32;
-}
-
 /* ------------------------------------------------------------------- */
 
 /* Botones */
@@ -153,4 +114,70 @@
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+/* ------------------------------------------------------------------- */
+
+/* RESPONSIVE */
+/* === TABLET === */
+@media (max-width: 992px) {
+    .reserva-section {
+        padding: 6rem 0 3.5rem;
+    }
+
+    .reserva-wrapper {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .reserva-info h1 {
+        font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
+    }
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+    .reserva-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .reserva-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .reserva-info p {
+        font-size: 0.95rem;
+    }
+
+    .reserva-form {
+        flex: 1 1 auto;
+        max-width: 100%;
+        padding: 1.8rem 1.6rem;
+        border-radius: 1rem;
+    }
+}
+
+/* === EXTRA-CHICO === */
+@media (max-width: 420px) {
+    .reserva-section {
+        padding: 5rem 0 3rem;
+    }
+
+    .reserva-info h1 {
+        font-size: 1.85rem;
+    }
+
+    .reserva-info p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+
+    .reserva-form {
+        padding: 1.5rem 1.3rem;
+        border-radius: 0.85rem;
+    }
 }

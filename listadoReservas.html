@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas | Administrador</title>
+
+    <!-- Tus estilos globales -->
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="CSS/listadoReservas.css">
+</head>
+
+<body>
+    <!-- MENÚ -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="logo" href="#">
+                <span class="logo-icon">
+                    <img src="img/logo_claro.png" alt="fashion-trend">
+                </span>
+                <span class="logo-text">SuperBarbería</span>
+            </a>
+
+            <!-- Hamburguesa - MOBILE -->
+            <button id="btnMenu" class="hamburger" aria-label="Menú">
+                <span></span>
+            </button>
+
+            <nav id="navLinks" class="nav-links">
+                <a href="index.html" class="btn-outline">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+    <!-- RF-08: Listado de Reservas – Administrador -->
+    <main class="main">
+        <section class="reservas-admin page-offset">
+            <div class="container">
+                <header class="section-head">
+                    <h1 class="titulo-seccion">Reservas</h1>
+                    <p class="subtitulo-seccion">Visualiza las próximas reservas</p>
+                </header>
+
+                <!-- AQUÍ el JS inyecta las tarjetas -->
+                <div id="listaReservas" class="reservas-grid"></div>
+
+                <div class="acciones-reservas">
+                    <button id="btnVerMas" class="btn btn-primario">Ver más</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__brand">
+            <img src="img/logo_claro.png" alt="Avatar Superbarbería" class="footer__icon" />
+            <span class="footer__name">Superbarbería</span>
+        </div>
+
+        <nav class="footer__links" aria-label="Redes y contacto">
+            <a id="emailLink" class="footer__link" href="#" aria-label="Enviar correo" title="Email">
+                <img src="img/gmail_logo.png" alt="" class="footer__icon" />
+            </a>
+
+            <a id="waLink" class="footer__link" href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+                rel="noopener">
+                <img src="img/whatsapp_logo.png" alt="" class="footer__icon" />
+            </a>
+
+            <a class="footer__link" href="https://instagram.com/superbarberia" aria-label="Instagram" title="Instagram"
+                target="_blank" rel="noopener">
+                <img src="img/ig_logo.png" alt="" class="footer__icon" />
+            </a>
+        </nav>
+    </footer>
+
+    <!-- AÑADIR SCRIPT -->
+</body>
+
+</html>

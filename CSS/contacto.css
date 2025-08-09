@@ -1,15 +1,17 @@
 .contacto-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    grid-template-areas: "info map";
+    align-items: start;
+    gap: 2rem;
 }
 
 .contacto-info {
+    grid-area: info;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
 
 .info-card h3 {
     color: var(--blanco);
@@ -21,7 +23,7 @@
 .contacto-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.75rem;
     padding: 0.5rem;
 }
 
@@ -51,11 +53,13 @@
     color: var(--blanco);
     font-size: 0.9rem;
     margin: 0;
-    line-height: 1;
+    line-height: 1.2;
 }
+/* --------------------------------------------------------------------- */
 
 /* MAPA */
 .mapa-container {
+    grid-area: map;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.65rem;
     padding: 2rem;
@@ -70,10 +74,91 @@
 }
 
 .mapa {
+    position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
 }
 
 .mapa iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --------------------------------------------------------------------- */
+
+/* RESPONSIVE */
+/* ====== TABLET ====== */
+@media (max-width: 992px) {
+    .contacto-content {
+        gap: 1.5rem;
+    }
+
+    .mapa-container {
+        padding: 1.5rem;
+    }
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+    .contacto-content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "info"
+            "map";
+    }
+
+    .info-card h3,
+    .mapa-container h3 {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+
+    .contacto-info {
+        gap: 1rem;
+    }
+
+    .contacto-item {
+        gap: 0.65rem;
+        padding: 0.5rem 0;
+    }
+
+    .contacto-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .contacto-details h4 {
+        font-size: 0.95rem;
+    }
+
+    .contacto-details p {
+        font-size: 0.9rem;
+    }
+
+    .mapa-container {
+        padding: 1rem;
+    }
+
+    .mapa {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* === EXTRA-CHICO === */
+@media (max-width: 480px) {
+    .contacto-details h4 {
+        font-size: 0.9rem;
+    }
+
+    .contacto-details p {
+        font-size: 0.85rem;
+    }
+
+    .mapa {
+        aspect-ratio: 1 / 1;
+    }
 }
