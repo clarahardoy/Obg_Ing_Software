@@ -56,7 +56,7 @@ class Reserva {
 }
 
 /* ------------------------ Sistema ------------------------ */
-export class Sistema {
+class Sistema {
   constructor() {
     /* Reservas previas */
     this.reservas = this.#leerLS();
@@ -99,7 +99,9 @@ export class Sistema {
       if (r.barberoId === barberoId) {
         const f = new Date(r.fechaHora);
         if (f.toISOString().split('T')[0] === fechaISO) {
-          ocupadas.add(f.toTimeString().slice(0, 5));
+        
+          const horaDesdeISO = f.toISOString().split('T')[1].slice(0, 5);
+          ocupadas.add(horaDesdeISO);
         }
       }
     }
@@ -267,4 +269,21 @@ function realizarReserva(s) {
 
   showMensaje('Su turno se reservó correctamente.', 'success');
   document.getElementById('formReserva')?.reset();
+}
+
+/* ----------------------- EXPORTACION DEL MODULO PARA JEST ----------------------- */
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { 
+    Sistema, 
+    Reserva, 
+    Servicio, 
+    Barbero,
+    showMensaje,
+    ponerMinFecha,
+    realizarReserva,
+    cargarSelects,
+    actualizarHoras,
+    renderServicios,
+    renderBarberos
+  };
 }
