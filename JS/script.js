@@ -40,8 +40,7 @@ class Barbero {
   }
 }
 class Reserva {
-  constructor({ nombre, apellido, celular, email,
-    barberoId, servicioId, fechaHora }) {
+  constructor({ nombre, apellido, celular, email, barberoId, servicioId, fechaHora }) {
     this.id = idReserva++;
     this.nombre = nombre;
     this.apellido = apellido;
@@ -66,19 +65,79 @@ class Sistema {
 
     /* Catálogos precargados con IDs fijos */
     this.listaServicios = [
-      new Servicio({ id: 0, nombre: "Corte de Pelo", descripcion: "Corte + lavado + peinado", precio: 450, img: "assets/images/servicio_corte.jpg" }),
-      new Servicio({ id: 1, nombre: "Rasurada de Barba", descripcion: "Arreglo y modelado de barba", precio: 350, img: "assets/images/servicio_barba.jpg" }),
-      new Servicio({ id: 2, nombre: "Colorimetría", descripcion: "Tintes y mechas", precio: 500, img: "assets/images/servicio_colorimetria.jpg" }),
-      new Servicio({ id: 3, nombre: "Lavado y Acondicionamiento", descripcion: "Lavado premium + hidratación", precio: 400, img: "assets/images/servicio_lavado.jpg" }),
-      new Servicio({ id: 4, nombre: "Tratamiento Premium", descripcion: "Nutrición profunda", precio: 800, img: "assets/images/servicio_premium.jpg" })
+      new Servicio({
+        id: 0,
+        nombre: "Corte de Pelo",
+        descripcion: "Corte + lavado + peinado",
+        precio: 450,
+        img: "img/logos_servicios/tijeras.png"
+      }),
+      new Servicio({
+        id: 1,
+        nombre: "Rasurada de Barba",
+        descripcion: "Arreglo y modelado de barba",
+        precio: 350,
+        img: "img/logos_servicios/barba.png"
+      }),
+      new Servicio({
+        id: 2,
+        nombre: "Colorimetría",
+        descripcion: "Tintes y mechas",
+        precio: 500,
+        img: "img/logos_servicios/color.png"
+      }),
+      new Servicio({
+        id: 3,
+        nombre: "Lavado y Acondicionamiento",
+        descripcion: "Lavado premium + hidratación",
+        precio: 400,
+        img: "img/logos_servicios/lavadoYAcondicionamiento.png"
+      }),
+      new Servicio({
+        id: 4,
+        nombre: "Tratamiento Premium",
+        descripcion: "Nutrición profunda",
+        precio: 800,
+        img: "img/logos_servicios/premium.png"
+      })
     ];
     this.listaBarberos = [
-      new Barbero({ id: 0, nombre: "Martín Ramírez", descripcion: "15 años de experiencia", img: "assets/images/barbero1.jpg" }),
-      new Barbero({ id: 1, nombre: "Diego Morales", descripcion: "Especialista en fades", img: "assets/images/barbero2.jpg" }),
-      new Barbero({ id: 2, nombre: "Sebastián Castro", descripcion: "Colorista", img: "assets/images/barbero3.jpg" }),
-      new Barbero({ id: 3, nombre: "Alejandro Torres", descripcion: "Diseño de barbas", img: "assets/images/barbero4.jpg" }),
-      new Barbero({ id: 4, nombre: "Javier Herrera", descripcion: "Texturizados", img: "assets/images/barbero5.jpg" }),
-      new Barbero({ id: 5, nombre: "Nicolás Gómez", descripcion: "Diseños con máquina", img: "assets/images/barbero6.jpg" })
+      new Barbero({
+        id: 0,
+        nombre: "Martín Ramírez",
+        descripcion: "15 años de experiencia en cortes clásicos y afeitado a navaja.",
+        img: "img/barberos/1_MartinR.png"
+      }),
+      new Barbero({
+        id: 1,
+        nombre: "Diego Morales",
+        descripcion: "Especialista en fades al milímetro y degradados modernos con terminación limpia.",
+        img: "img/barberos/2_DiegoM.png"
+      }),
+      new Barbero({
+        id: 2,
+        nombre: "Sebastián Castro",
+        descripcion: "Colorista experto en mechas y decoloración, tonos que realmente destacan.",
+        img: "img/barberos/3_SebastianC.png"
+      }),
+      new Barbero({
+        id: 3,
+        nombre: "Alejandro Torres",
+        descripcion: "Experto en diseño y cuidado de barbas; líneas definidas y grooming preciso.",
+        img: "img/barberos/4_AlejandroT.png"
+      }),
+      new Barbero({
+        id: 4,
+        nombre: "Javier Herrera",
+        descripcion: "Texturizados con volumen y undercuts creativos hechos a medida.",
+        img: "img/barberos/5_JavierH.png"
+      }),
+      new Barbero({
+        id: 5,
+        nombre: "Nicolás Gómez",
+        descripcion: "Diseños con máquina y detalles de barber art para un look único.",
+        img: "img/barberos/6_NicolasG.png"
+      })
     ];
 
     /* Horarios 09:00-21:00 cada 30' */
@@ -92,7 +151,7 @@ class Sistema {
 
   /* ---- Turnos libres para barbero + fecha ---- */
   horasDisponibles(barberoId, fechaISO) {
-    if (isNaN(barberoId) || !fechaISO) return [];   // no hay selección aún
+    if (isNaN(barberoId) || !fechaISO) return [];
 
     const ocupadas = new Set();
     for (const r of this.reservas) {
@@ -100,8 +159,8 @@ class Sistema {
         const f = new Date(r.fechaHora);
         if (f.toISOString().split('T')[0] === fechaISO) {
           ocupadas.add(f.toTimeString().slice(0, 5));
-        
-         
+
+
         }
       }
     }
@@ -157,7 +216,9 @@ function renderServicios(s) {
   for (const srv of s.listaServicios) {
     html += `
       <div class="servicio-card">
-        <div class="servicio-icon"><img src="${srv.img}" alt="${srv.nombre}"></div>
+        <div class="servicio-icon">
+          <img src="${srv.img}" alt="${srv.nombre}">
+        </div>
         <h3>${srv.nombre}</h3>
         <p>${srv.descripcion}</p>
         <span class="precio">$${srv.precio}</span>
@@ -173,7 +234,9 @@ function renderBarberos(s) {
   for (const b of s.listaBarberos) {
     html += `
       <div class="barbero-card">
-        <div class="barbero-icon"><img src="${b.img}" alt="${b.nombre}"></div>
+        <div class="barbero-icon">
+          <img src="${b.img}" alt="${b.nombre}">
+        </div>
         <h3>${b.nombre}</h3>
         <p>${b.descripcion}</p>
       </div>`;
@@ -273,10 +336,10 @@ function realizarReserva(s) {
 
 /* ----------------------- EXPORTACION DEL MODULO PARA JEST ----------------------- */
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { 
-    Sistema, 
-    Reserva, 
-    Servicio, 
+  module.exports = {
+    Sistema,
+    Reserva,
+    Servicio,
     Barbero,
     showMensaje,
     ponerMinFecha,

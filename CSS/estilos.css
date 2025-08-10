@@ -180,7 +180,10 @@ section {
 .landing {
     height: 80vh;
     min-height: 500px;
-    background: url("../img/landing.jpg") center/cover no-repeat;
+    background: url("../img/landing.png") center/cover no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
     position: relative;
     display: flex;
     align-items: center;
@@ -353,6 +356,10 @@ section {
         font-size: .95rem;
         max-width: 540px;
     }
+
+    .landing {
+        background-attachment: scroll;
+    }
 }
 
 /* === MOBILE === */
@@ -425,6 +432,7 @@ section {
     .btn-primary {
         padding: .7rem 1.5rem;
     }
+
     .footer {
         padding: .9rem 1rem;
     }
@@ -467,6 +475,7 @@ section {
         padding: .24rem .8rem;
         border-radius: 18px;
     }
+
     .footer__icon {
         width: 1.35rem;
         height: 1.35rem;

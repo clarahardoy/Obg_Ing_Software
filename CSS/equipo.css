@@ -22,20 +22,21 @@
     box-shadow: 0 0 18px rgba(255, 255, 255, .35);
 }
 
-/* Imagen */
-.barbero-img {
+/* Imágenes — cuadradas (desktop/tablet) */
+.barbero-icon {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 
-.barbero-img img {
+.barbero-icon img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Texto*/
+/* Texto */
 .barbero-card h3 {
     font-size: 1.15rem;
     margin: .9rem 1rem .4rem;
@@ -47,9 +48,9 @@
     margin: 0 1rem 1.3rem;
     color: #444;
 }
-/* --------------------------------------------------------------------- */
 
-/* RESPOSIVE */
+/* --------------------------------------------------------------------- */
+/* RESPONSIVE */
 
 /* === TABLET === */
 @media (max-width: 992px) {
@@ -68,41 +69,46 @@
         padding: 0 1rem;
     }
 
+    /* Card apilada; SIN padding arriba/los lados */
     .barbero-card {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
+        display: block;
+        padding: 0 0 1rem;
+        /* solo beige abajo para el texto */
         text-align: left;
     }
 
-    .barbero-img {
-        width: 84px;
-        height: 84px;
-        aspect-ratio: auto;
-        border-radius: 0.5rem;
+    /* La imagen llena el ancho del card */
+    .barbero-icon {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 0;
+        /* que herede el radio del card */
         overflow: hidden;
-        flex-shrink: 0;
+        margin: 0 0 .75rem;
+        /* separación con el título */
     }
 
-    .barbero-img img {
+    .barbero-icon img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
     .barbero-card h3 {
-        margin: 0 0 .25rem 0;
+        margin: 0 1rem .25rem;
+        /* conserva aire lateral del texto */
         font-size: 1.05rem;
+        line-height: 1.15;
     }
 
     .barbero-card p {
-        margin: 0;
+        margin: 0 1rem;
         font-size: .95rem;
         line-height: 1.4;
         color: #444;
     }
 
+    /* sin “brinco” en hover en mobile */
     .barbero-card:hover,
     .barbero-card:focus-within {
         transform: none;
@@ -111,13 +117,9 @@
     }
 }
 
+
 /* === EXTRA-CHICO === */
 @media (max-width: 420px) {
-    .barbero-img {
-        width: 72px;
-        height: 72px;
-    }
-
     .barbero-card h3 {
         font-size: 1rem;
     }

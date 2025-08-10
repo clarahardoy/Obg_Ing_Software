@@ -19,9 +19,11 @@
     border-color: var(--marronOscuro);
 }
 
+/* Imagen: SIEMPRE rectangular (más alta) y centrada */
 .trabajo-img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
+    /* ancho igual, más alta */
     overflow: hidden;
     position: relative;
 }
@@ -30,6 +32,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    /* centrada */
     transition: transform .3s ease;
 }
 
@@ -37,8 +41,8 @@
     transform: scale(1.05);
 }
 
-/* RESPONSIVE */
-/* === TABLET === */
+/* ============== RESPONSIVE ============== */
+/* Tablet */
 @media (max-width: 992px) {
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -47,7 +51,7 @@
     }
 }
 
-/* === MOBILE === */
+/* Mobile: lista, imagen grande arriba, margen finito */
 @media (max-width: 768px) {
     .galeria-grid {
         grid-template-columns: 1fr;
@@ -56,38 +60,31 @@
     }
 
     .trabajo-card {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.75rem;
+        display: block;
+        padding: .25rem;
+        /* margen beige finito */
     }
 
     .trabajo-img {
-        width: 120px;
-        height: 90px;
-        aspect-ratio: auto;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        flex-shrink: 0;
+        border-radius: .5rem;
+        margin: 0;
     }
 
-    .trabajo-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform .3s ease;
-    }
-
+    /* sin hover en mobile */
     .trabajo-card:hover {
         transform: none;
         border-color: transparent;
     }
 }
 
-/* === EXTRA-CHICO === */
+/* Extra-chico */
 @media (max-width: 420px) {
+    .trabajo-card {
+        padding: .2rem;
+    }
+
+    /* aún más finito */
     .trabajo-img {
-        width: 100px;
-        height: 75px;
+        border-radius: .45rem;
     }
 }
