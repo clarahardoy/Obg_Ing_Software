@@ -180,7 +180,7 @@ section {
 .landing {
     height: 80vh;
     min-height: 500px;
-    background: url("../img/landing.png") center/cover no-repeat;
+    background: url("../img/seccion_landing.png") center/cover no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;

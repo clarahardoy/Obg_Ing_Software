@@ -11,14 +11,27 @@
     --verdeFondo: var(--negro);
 }
 
-/* Sección layout & fondo */
+/* SECCIÓN RESERVA */
 .reserva-section {
     padding: 7rem 0 4rem;
     min-height: 100vh;
+    background: url("../img/seccion_reserva.png") center/cover no-repeat fixed;
+    position: relative;
+    isolation: isolate;
 }
 
-/* Wrapper de las dos columnas */
+.reserva-section::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 11, 13, 0.55);
+    z-index: 0;
+    pointer-events: none;
+}
+
 .reserva-wrapper {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
@@ -26,7 +39,9 @@
     align-items: flex-start;
 }
 
-/* Texto */
+/* --------------------------------------------------------------------- */
+
+/* TEXTO */
 .reserva-info {
     flex: 1 1 320px;
     max-width: 520px;
@@ -45,19 +60,18 @@
     opacity: .92;
 }
 
-/* Formulario */
+/* --------------------------------------------------------------------- */
+
+/* FORM */
 .reserva-form {
     flex: 1 1 360px;
     max-width: 460px;
-    background: rgba(0, 0, 0, 0.4);
-    /* tono más oscuro para contrastar con BG */
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(4px);
     padding: 2.3rem 2.6rem;
     border-radius: 1.25rem;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
-
-/* ------------------------------------------------------------------ */
 
 /* Campos */
 .form-group {
@@ -84,7 +98,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: .95rem;
     background: #fff;
-    color: var();
+    color: #222;
     transition: border-color .25s ease, box-shadow .25s ease;
 }
 
@@ -98,8 +112,6 @@
     box-shadow: 0 0 0 3px rgba(115, 65, 36, .25);
     outline: none;
 }
-
-/* ------------------------------------------------------------------- */
 
 /* Botones */
 .btn-block {
@@ -116,7 +128,7 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
 }
 
-/* ------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
 
 /* RESPONSIVE */
 /* === TABLET === */
