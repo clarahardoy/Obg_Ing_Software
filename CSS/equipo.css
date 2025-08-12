@@ -22,7 +22,7 @@
     box-shadow: 0 0 18px rgba(255, 255, 255, .35);
 }
 
-/* Imágenes — cuadradas (desktop/tablet) */
+/* Imágenes */
 .barbero-icon {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -69,23 +69,18 @@
         padding: 0 1rem;
     }
 
-    /* Card apilada; SIN padding arriba/los lados */
     .barbero-card {
         display: block;
         padding: 0 0 1rem;
-        /* solo beige abajo para el texto */
         text-align: left;
     }
 
-    /* La imagen llena el ancho del card */
     .barbero-icon {
         width: 100%;
         aspect-ratio: 1 / 1;
         border-radius: 0;
-        /* que herede el radio del card */
         overflow: hidden;
         margin: 0 0 .75rem;
-        /* separación con el título */
     }
 
     .barbero-icon img {
@@ -96,7 +91,6 @@
 
     .barbero-card h3 {
         margin: 0 1rem .25rem;
-        /* conserva aire lateral del texto */
         font-size: 1.05rem;
         line-height: 1.15;
     }
@@ -108,7 +102,6 @@
         color: #444;
     }
 
-    /* sin “brinco” en hover en mobile */
     .barbero-card:hover,
     .barbero-card:focus-within {
         transform: none;
